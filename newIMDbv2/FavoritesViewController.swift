@@ -47,14 +47,12 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
         Alamofire.request(.GET, URL, parameters: ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"])
             .responseObject {(response: TMDMovie?, error: ErrorType?) in
                 cell.movieTitle.text = response?.title
-                let imageUrl = NSURL(fileURLWithPath: "http://image.tmdb.org/t/p/w185\(response?.imagePath)")
-                cell.movieImage.sd_setImageWithURL(imageUrl, completed: nil)
-                /*let url = NSURL(string: "http://image.tmdb.org/t/p/w185\(response?.imagePath)")
-                cell.movieImage.image = UIImage(data: NSData(contentsOfURL: url!)!)*/
-        }
-        
-        //cell.movieTitle.text = "Test Movie Title Long"
-        //cell.movieImage.image = UIImage(named: "MovieImage")
+                if let imageUrl = response?.imagePath {
+                    let resolution = "w185"
+                    let fullUrl = "http://image.tmdb.org/t/p/\(resolution)/\(imageUrl)"
+                    cell.movieImage.sd_setImageWithURL(NSURL(string: fullUrl), completed: nil)
+                }
+            }
         return cell
     }
 
