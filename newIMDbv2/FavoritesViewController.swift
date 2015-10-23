@@ -55,6 +55,16 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
             }
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //let senderTile =
+        if segue.identifier == "showMovieDetails" {
+            // pass data to next view
+            let detailsViewController = segue.destinationViewController as! TMDMovieDetailsViewController
+            detailsViewController.displayInLabel("Test")
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

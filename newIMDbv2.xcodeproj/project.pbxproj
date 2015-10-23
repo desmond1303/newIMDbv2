@@ -17,6 +17,7 @@
 		7D7283941BD8D19D00AE1030 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7283931BD8D19D00AE1030 /* FilterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		7D7283961BD8D60400AE1030 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D7283951BD8D60400AE1030 /* Podfile */; settings = {ASSET_TAGS = (); }; };
 		7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7283981BD8D70000AE1030 /* TMDMovie.swift */; settings = {ASSET_TAGS = (); }; };
+		7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8B687863B9EFF53CF40CC7B2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71989E7BA1822AA0687611B4 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		7D7283931BD8D19D00AE1030 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		7D7283951BD8D60400AE1030 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7D7283981BD8D70000AE1030 /* TMDMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovie.swift; sourceTree = "<group>"; };
+		7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovieDetailsViewController.swift; sourceTree = "<group>"; };
 		D2544607DF9A8A25BA818600 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */,
 				7D72837D1BD8C4B300AE1030 /* FavoritesViewController.swift */,
 				7D72837F1BD8C4B300AE1030 /* Main.storyboard */,
+				7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */,
 				7D7283931BD8D19D00AE1030 /* FilterViewController.swift */,
 				7D7283911BD8CB5900AE1030 /* CellImageViewController.swift */,
 				7D72838F1BD8CA7A00AE1030 /* FavCell.swift */,
@@ -237,6 +240,7 @@
 				7D72837E1BD8C4B300AE1030 /* FavoritesViewController.swift in Sources */,
 				7D7283901BD8CA7A00AE1030 /* FavCell.swift in Sources */,
 				7D7283921BD8CB5900AE1030 /* CellImageViewController.swift in Sources */,
+				7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */,
 				7D72837C1BD8C4B300AE1030 /* AppDelegate.swift in Sources */,
 				7D7283941BD8D19D00AE1030 /* FilterViewController.swift in Sources */,
 			);

@@ -14,6 +14,7 @@ import AlamofireObjectMapper
 class TMDMovie: Mappable {
     var title : String?
     var imagePath : String?
+    var genres = [String]()
     var description : String?
     var releaseDate : String?
     var runtime : Int? //in minutes
@@ -27,6 +28,7 @@ class TMDMovie: Mappable {
     func mapping(map: Map) {
         self.title <- map["original_title"]
         self.imagePath <- map["poster_path"]
+        self.genres <- map["genres"]["name"]
         self.description <- map ["overview"]
         self.releaseDate <- map["release_date"]
         self.runtime <- map["runtime"]
