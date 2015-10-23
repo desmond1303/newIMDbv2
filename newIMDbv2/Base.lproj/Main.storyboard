@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gLk-6f-gvD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gLk-6f-gvD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--Favorites View Controller-->
+        <!--Fav View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FavoritesViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TMDFavViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s3h-zQ-XTr">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s3h-zQ-XTr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xR8-Bi-hw1">
                                     <size key="itemSize" width="110" height="187"/>
@@ -26,21 +27,23 @@
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieTile" id="Jbf-vg-tMo" customClass="FavCell" customModule="newIMDbv2" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieTile" id="Jbf-vg-tMo" customClass="TMDFavCell" customModule="newIMDbv2" customModuleProvider="target">
                                         <rect key="frame" x="10" y="74" width="110" height="187"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="187"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUk-5B-QpP" customClass="CellImageViewController" customModule="newIMDbv2" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUk-5B-QpP" customClass="TMDMovieTileImageView" customModule="newIMDbv2" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="170"/>
+                                                    <animations/>
                                                     <variation key="heightClass=regular" fixedFrame="YES">
                                                         <rect key="frame" x="0.0" y="0.0" width="110" height="145"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6T-er-zDH">
-                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="166" width="42" height="21"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -50,8 +53,10 @@
                                                     </variation>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="default">
                                             <mask key="subviews">
@@ -68,13 +73,14 @@
                                         <connections>
                                             <outlet property="movieImage" destination="SUk-5B-QpP" id="G86-VU-iiR"/>
                                             <outlet property="movieTitle" destination="Z6T-er-zDH" id="kQb-fG-nbJ"/>
-                                            <segue destination="rsx-cU-aqU" kind="push" identifier="showMovieDetails" id="PQA-hq-wf7"/>
+                                            <segue destination="rsx-cU-aqU" kind="showDetail" identifier="showMovieDetails" id="PQA-hq-wf7"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7c0-Im-K6J">
                                     <rect key="frame" x="0.0" y="64" width="600" height="10"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </collectionReusableView>
                                 <variation key="heightClass=regular" misplaced="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
@@ -85,36 +91,11 @@
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="s3h-zQ-XTr" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="F0Q-ZW-703"/>
-                            <constraint firstItem="s3h-zQ-XTr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GQF-oR-bYo"/>
-                            <constraint firstItem="s3h-zQ-XTr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e4f-Vt-0zV"/>
-                            <constraint firstAttribute="trailing" secondItem="s3h-zQ-XTr" secondAttribute="trailing" id="gxw-Gn-cjn"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="F0Q-ZW-703"/>
-                                <exclude reference="GQF-oR-bYo"/>
-                                <exclude reference="e4f-Vt-0zV"/>
-                                <exclude reference="gxw-Gn-cjn"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="constraints">
-                                <include reference="F0Q-ZW-703"/>
-                                <include reference="GQF-oR-bYo"/>
-                                <include reference="e4f-Vt-0zV"/>
-                                <include reference="gxw-Gn-cjn"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="r8i-Zb-Ug0">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="yX5-Ql-qnM">
-                            <connections>
-                                <segue destination="ZB0-ih-OQ4" kind="presentation" id="gWW-by-85l"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Filter" id="yX5-Ql-qnM"/>
                     </navigationItem>
                     <connections>
                         <outlet property="FavCollection" destination="s3h-zQ-XTr" id="Pyt-3o-rBs"/>
@@ -122,64 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821" y="-224.25"/>
-        </scene>
-        <!--Filter View Controller-->
-        <scene sceneID="HNv-FF-H5v">
-            <objects>
-                <viewController id="ZB0-ih-OQ4" customClass="FilterViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uoF-3j-i0Z"/>
-                        <viewControllerLayoutGuide type="bottom" id="KKi-7C-M81"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hWW-Go-GTB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJJ-Kc-FSE">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Filters" id="27W-EA-FxQ">
-                                        <barButtonItem key="rightBarButtonItem" title="Close" id="X4H-yF-cFY">
-                                            <connections>
-                                                <action selector="CloseFiltersButton:" destination="ZB0-ih-OQ4" id="fw6-SK-Dfg"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="RJJ-Kc-FSE" firstAttribute="top" secondItem="uoF-3j-i0Z" secondAttribute="bottom" id="GDl-8H-GdP"/>
-                            <constraint firstItem="RJJ-Kc-FSE" firstAttribute="leading" secondItem="hWW-Go-GTB" secondAttribute="leading" id="H1F-k3-KPj"/>
-                            <constraint firstAttribute="trailing" secondItem="RJJ-Kc-FSE" secondAttribute="trailing" id="yvZ-Kc-iWZ"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="RJJ-Kc-FSE"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="GDl-8H-GdP"/>
-                                <exclude reference="H1F-k3-KPj"/>
-                                <exclude reference="yvZ-Kc-iWZ"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="subviews">
-                                <include reference="RJJ-Kc-FSE"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="GDl-8H-GdP"/>
-                                <include reference="H1F-k3-KPj"/>
-                                <include reference="yvZ-Kc-iWZ"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V4e-Xd-FZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1574" y="-575.25"/>
+            <point key="canvasLocation" x="809" y="612"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="fab-TC-Yl1">
@@ -195,11 +119,13 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYP-XM-X2x">
                                 <rect key="frame" x="20" y="80" width="42" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tw6-Cu-0om"/>
@@ -209,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXJ-AA-UDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1574" y="88.5"/>
+            <point key="canvasLocation" x="1514" y="612"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4hn-tI-P6o">
@@ -218,6 +144,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xLx-2u-HlU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -227,7 +154,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aqg-cn-esG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-670" y="1257.75"/>
+            <point key="canvasLocation" x="-686" y="1328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9C2-jE-OMv">
@@ -237,6 +164,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="npR-Me-jT6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uYr-yx-usp"/>
@@ -253,6 +181,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RdG-1K-lub">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aa8-AR-72t">
@@ -261,7 +190,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aa8-AR-72t" id="IoZ-zA-xph">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -273,7 +204,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fX2-q7-LP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="1470"/>
+            <point key="canvasLocation" x="809" y="1328"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AvI-ji-TBZ">
@@ -283,6 +214,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GFi-N6-yXM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="Hh5-x0-c7x" kind="relationship" relationship="rootViewController" id="EAr-qW-WOe"/>
@@ -290,7 +222,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZu-Ax-ofJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="1470"/>
+            <point key="canvasLocation" x="110" y="1328"/>
         </scene>
     </scenes>
 </document>

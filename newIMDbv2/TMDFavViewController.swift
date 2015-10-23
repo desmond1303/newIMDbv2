@@ -12,7 +12,7 @@ import ObjectMapper
 import AlamofireObjectMapper
 import SDWebImage
 
-class FavoritesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class TMDFavViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var FavCollection: UICollectionView!
     
@@ -41,7 +41,7 @@ class FavoritesViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = FavCollection.dequeueReusableCellWithReuseIdentifier("movieTile", forIndexPath: indexPath) as! FavCell
+        let cell = FavCollection.dequeueReusableCellWithReuseIdentifier("movieTile", forIndexPath: indexPath) as! TMDFavCell
         
         let URL = "https://api.themoviedb.org/3/movie/550"
         Alamofire.request(.GET, URL, parameters: ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"])

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class FavCell: UICollectionViewCell {
+class TMDFavCell: UICollectionViewCell {
     
-    @IBOutlet weak var movieImage: CellImageViewController!
+    @IBOutlet weak var movieImage: TMDMovieTileImageView!
     @IBOutlet weak var movieTitle: UILabel!
     
     

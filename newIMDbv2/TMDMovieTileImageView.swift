@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CellImageViewController: UIImageView {
+class TMDMovieTileImageView: UIImageView {
 
     /*
     // Only override drawRect: if you perform custom drawing.

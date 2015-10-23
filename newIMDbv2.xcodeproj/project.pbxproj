@@ -8,16 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		7D72837C1BD8C4B300AE1030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */; };
-		7D72837E1BD8C4B300AE1030 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837D1BD8C4B300AE1030 /* FavoritesViewController.swift */; };
+		7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */; };
 		7D7283811BD8C4B300AE1030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D72837F1BD8C4B300AE1030 /* Main.storyboard */; };
 		7D7283831BD8C4B300AE1030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D7283821BD8C4B300AE1030 /* Assets.xcassets */; };
 		7D7283861BD8C4B300AE1030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D7283841BD8C4B300AE1030 /* LaunchScreen.storyboard */; };
-		7D7283901BD8CA7A00AE1030 /* FavCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72838F1BD8CA7A00AE1030 /* FavCell.swift */; settings = {ASSET_TAGS = (); }; };
-		7D7283921BD8CB5900AE1030 /* CellImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7283911BD8CB5900AE1030 /* CellImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7D7283941BD8D19D00AE1030 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7283931BD8D19D00AE1030 /* FilterViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7D7283961BD8D60400AE1030 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D7283951BD8D60400AE1030 /* Podfile */; settings = {ASSET_TAGS = (); }; };
-		7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7283981BD8D70000AE1030 /* TMDMovie.swift */; settings = {ASSET_TAGS = (); }; };
-		7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7D7283901BD8CA7A00AE1030 /* TMDFavCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72838F1BD8CA7A00AE1030 /* TMDFavCell.swift */; };
+		7D7283921BD8CB5900AE1030 /* TMDMovieTileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7283911BD8CB5900AE1030 /* TMDMovieTileImageView.swift */; };
+		7D7283961BD8D60400AE1030 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7D7283951BD8D60400AE1030 /* Podfile */; };
+		7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7283981BD8D70000AE1030 /* TMDMovie.swift */; };
+		7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */; };
 		8B687863B9EFF53CF40CC7B2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71989E7BA1822AA0687611B4 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,14 +25,13 @@
 		71989E7BA1822AA0687611B4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7283781BD8C4B300AE1030 /* newIMDbv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newIMDbv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D72837D1BD8C4B300AE1030 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDFavViewController.swift; sourceTree = "<group>"; };
 		7D7283801BD8C4B300AE1030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D7283821BD8C4B300AE1030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D7283851BD8C4B300AE1030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D7283871BD8C4B300AE1030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D72838F1BD8CA7A00AE1030 /* FavCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavCell.swift; sourceTree = "<group>"; };
-		7D7283911BD8CB5900AE1030 /* CellImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellImageViewController.swift; sourceTree = "<group>"; };
-		7D7283931BD8D19D00AE1030 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		7D72838F1BD8CA7A00AE1030 /* TMDFavCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDFavCell.swift; sourceTree = "<group>"; };
+		7D7283911BD8CB5900AE1030 /* TMDMovieTileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovieTileImageView.swift; sourceTree = "<group>"; };
 		7D7283951BD8D60400AE1030 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7D7283981BD8D70000AE1030 /* TMDMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovie.swift; sourceTree = "<group>"; };
 		7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovieDetailsViewController.swift; sourceTree = "<group>"; };
@@ -83,14 +81,11 @@
 		7D72837A1BD8C4B300AE1030 /* newIMDbv2 */ = {
 			isa = PBXGroup;
 			children = (
+				7DEEED4F1BDA8C88001C26EA /* Views */,
+				7DEEED4E1BDA8C6C001C26EA /* Controllers */,
 				7D7283971BD8D6BC00AE1030 /* Models */,
 				7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */,
-				7D72837D1BD8C4B300AE1030 /* FavoritesViewController.swift */,
 				7D72837F1BD8C4B300AE1030 /* Main.storyboard */,
-				7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */,
-				7D7283931BD8D19D00AE1030 /* FilterViewController.swift */,
-				7D7283911BD8CB5900AE1030 /* CellImageViewController.swift */,
-				7D72838F1BD8CA7A00AE1030 /* FavCell.swift */,
 				7D7283821BD8C4B300AE1030 /* Assets.xcassets */,
 				7D7283841BD8C4B300AE1030 /* LaunchScreen.storyboard */,
 				7D7283871BD8C4B300AE1030 /* Info.plist */,
@@ -104,6 +99,24 @@
 				7D7283981BD8D70000AE1030 /* TMDMovie.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		7DEEED4E1BDA8C6C001C26EA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */,
+				7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7DEEED4F1BDA8C88001C26EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D72838F1BD8CA7A00AE1030 /* TMDFavCell.swift */,
+				7D7283911BD8CB5900AE1030 /* TMDMovieTileImageView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B4F09AEBE9F2FF838E679FBF /* Frameworks */ = {
@@ -237,12 +250,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */,
-				7D72837E1BD8C4B300AE1030 /* FavoritesViewController.swift in Sources */,
-				7D7283901BD8CA7A00AE1030 /* FavCell.swift in Sources */,
-				7D7283921BD8CB5900AE1030 /* CellImageViewController.swift in Sources */,
+				7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */,
+				7D7283901BD8CA7A00AE1030 /* TMDFavCell.swift in Sources */,
+				7D7283921BD8CB5900AE1030 /* TMDMovieTileImageView.swift in Sources */,
 				7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */,
 				7D72837C1BD8C4B300AE1030 /* AppDelegate.swift in Sources */,
-				7D7283941BD8D19D00AE1030 /* FilterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
