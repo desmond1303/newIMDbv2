@@ -16,6 +16,24 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     @IBOutlet weak var FavCollection: UICollectionView!
     
+    func getFromTMD(movieID: Int) -> [TMDMovie] {
+        let result: [TMDMovie]
+        
+        let URL = "https://api.themoviedb.org/3/movie/\(movieID)"
+        Alamofire.request(.GET, URL, parameters: ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"])
+            .responseObject {(response: TMDMovie?, error: ErrorType?) in
+                cell.movieTitle.text = response?.title
+                if let imageUrl = response?.imagePath {
+                    let resolution = "w185"
+                    let fullUrl = "http://image.tmdb.org/t/p/\(resolution)/\(imageUrl)"
+                    cell.movieImage.sd_setImageWithURL(NSURL(string: fullUrl), completed: nil)
+                }
+        }
+        
+        return result
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,16 +61,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = FavCollection.dequeueReusableCellWithReuseIdentifier("movieTile", forIndexPath: indexPath) as! TMDFavCell
         
-        let URL = "https://api.themoviedb.org/3/movie/550"
-        Alamofire.request(.GET, URL, parameters: ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"])
-            .responseObject {(response: TMDMovie?, error: ErrorType?) in
-                cell.movieTitle.text = response?.title
-                if let imageUrl = response?.imagePath {
-                    let resolution = "w185"
-                    let fullUrl = "http://image.tmdb.org/t/p/\(resolution)/\(imageUrl)"
-                    cell.movieImage.sd_setImageWithURL(NSURL(string: fullUrl), completed: nil)
-                }
-            }
+        
         return cell
     }
     
