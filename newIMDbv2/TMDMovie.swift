@@ -14,7 +14,7 @@ import AlamofireObjectMapper
 class TMDMovie: Mappable {
     var title : String?
     var imagePath : String?
-    var genres = [String]()
+    var genres = [String]?()
     var description : String?
     var releaseDate : String?
     var runtime : Int? //in minutes

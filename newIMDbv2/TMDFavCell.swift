@@ -11,8 +11,6 @@ import UIKit
 class TMDFavCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImage: TMDMovieTileImageView!
-    @IBOutlet weak var movieTitle: UILabel!
     
-    
-    
+    @IBOutlet weak var movieTitleLabel: UILabel!
 }
