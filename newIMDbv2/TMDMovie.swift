@@ -34,6 +34,7 @@ class TMDMovie: Mappable {
         self.runtime <- map["runtime"]
         self.voteAvg <- map["vote_average"]
         self.voteCount <- map["vote_count"]
+        self.results <- map["results"]
         
     }
     
