@@ -16,7 +16,6 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     @IBOutlet weak var TMDFavCollectionOutlet: UICollectionView!
     
-    var myTMDMovie: [TMDMovie]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +25,15 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         self.navigationItem.title = "Favorites"
         
-        let URL = "https://api.themoviedb.org/3/discover/movie"
+        let URL = "https://api.themoviedb.org/3/movie/top_rated"
         Alamofire
             .request(.GET, URL, parameters: ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"])
             .responseObject {(response: TMDMovie?, error: ErrorType?) in
                 
-                
+                print(response!.title)
                 
             }
+        
     
         /*
         let filterButton = UIBarButtonItem(title: "Filter", style: UIBarButtonItemStyle.Plain, target: self, action: "")
@@ -49,6 +49,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //return self.myPopularMovies!.results!.count
         return 8
     }
     
