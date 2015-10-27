@@ -66,13 +66,12 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         cell.movieTitleLabel.text = currentMovie.title
         
-        let block: SDWebImageCompletionBlock! = {(image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
+        //let block: SDWebImageCompletionBlock! =
+        
+        cell.movieImage.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
+            (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
             print(self)
-        }
-        
-
-        
-        cell.movieImage.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: block)
+        })
         
         
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */; };
 		7D72837C1BD8C4B300AE1030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */; };
 		7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */; };
 		7D7283811BD8C4B300AE1030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D72837F1BD8C4B300AE1030 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		66278C3DB3D18314B7AB5942 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		71989E7BA1822AA0687611B4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDCustomLayout.swift; sourceTree = "<group>"; };
 		7D7283781BD8C4B300AE1030 /* newIMDbv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newIMDbv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDFavViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7D42ACE81BDF9E6500E5DD85 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
 		7D72836F1BD8C4B300AE1030 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		7D72837A1BD8C4B300AE1030 /* newIMDbv2 */ = {
 			isa = PBXGroup;
 			children = (
+				7D42ACE81BDF9E6500E5DD85 /* Layouts */,
 				7DEEED4F1BDA8C88001C26EA /* Views */,
 				7DEEED4E1BDA8C6C001C26EA /* Controllers */,
 				7D7283971BD8D6BC00AE1030 /* Models */,
@@ -251,6 +262,7 @@
 			files = (
 				7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */,
 				7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */,
+				7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */,
 				7D7283901BD8CA7A00AE1030 /* TMDFavCell.swift in Sources */,
 				7D7283921BD8CB5900AE1030 /* TMDMovieTileImageView.swift in Sources */,
 				7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */,
