@@ -13,10 +13,12 @@ import AlamofireObjectMapper
 class TMDMovie : Mappable {
     
     var title : String?
+    var originalTitle : String?
     var imagePath : String?
-    var genres = [String]?()
+    var genres = [Int]?()
     var description : String?
     var releaseDate : String?
+    var popularity : Double?
     var runtime : Int? //in minutes
     var voteAvg : Double?
     var voteCount : Int?
@@ -27,9 +29,11 @@ class TMDMovie : Mappable {
     
     func mapping(map: Map) {
         self.title <- map["title"]
+        self.originalTitle <- map["original_title"]
         self.imagePath <- map["poster_path"]
-        self.genres <- map["genres"]
-        self.description <- map["description"]
+        self.genres <- map["genre_ids"]
+        self.description <- map["overview"]
+        self.popularity <- map["popularity"]
         self.releaseDate <- map["release_date"]
         self.runtime <- map["runtime"]
         self.voteAvg <- map["vote_average"]

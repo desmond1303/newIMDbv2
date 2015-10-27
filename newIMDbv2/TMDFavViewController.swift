@@ -62,7 +62,19 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("movieTile", forIndexPath: indexPath) as! TMDFavCell
         
-        cell.movieTitleLabel.text = self.movies![indexPath.row].title
+        let currentMovie = self.movies![indexPath.row]
+        
+        cell.movieTitleLabel.text = currentMovie.title
+        
+        let block: SDWebImageCompletionBlock! = {(image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
+            print(self)
+        }
+        
+
+        
+        cell.movieImage.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: block)
+        
+        
         
         return cell
     }
