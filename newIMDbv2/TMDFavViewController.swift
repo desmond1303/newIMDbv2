@@ -11,14 +11,12 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 import SDWebImage
-import SwiftyJSON
 
 class TMDFavViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var TMDFavCollectionOutlet: UICollectionView!
-    
-    var TMDMovies : [TMDMovieCollection]?
-    
+
+    var movies : [TMDMovie]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,38 +25,25 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         TMDFavCollectionOutlet.dataSource = self
         
         self.navigationItem.title = "Favorites"
-        
+       
         
         let url = "https://api.themoviedb.org/3/movie/top_rated"
         let urlParamteres = ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"]
         
-        Alamofire.request(.GET, url, parameters: urlParamteres)
-            .responseJSON { response in
-                /*
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                */
+        Alamofire
+            .request(.GET, url, parameters: urlParamteres)
+            .responseArray("results") { (response:[TMDMovie]?, error: ErrorType?) in
+                self.movies = response!
                 
-                if let responseData = response.result.value {
-                    let results = JSON(responseData)
-                    
-                    let resultCount = results["results"].count
-                    for var i in 0..<resultCount {
-                        print(results["results"][i++]["title"].string!)
-                    }
-                }
+                self.TMDFavCollectionOutlet.reloadData()
         }
-        
-       
+
         
         /*
         let filterButton = UIBarButtonItem(title: "Filter", style: UIBarButtonItemStyle.Plain, target: self, action: "")
         self.navigationItem.rightBarButtonItem = filterButton
         */
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     
@@ -67,14 +52,17 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return self.myPopularMovies!.results!.count
-        return 8
+        if let movie = self.movies {
+            return movie.count
+        }
+        
+        return 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("movieTile", forIndexPath: indexPath) as! TMDFavCell
-        cell.movieTitleLabel.text = "This will be a realtively long title for any move but whatever"
         
+        cell.movieTitleLabel.text = self.movies![indexPath.row].title
         
         return cell
     }
