@@ -6,35 +6,29 @@
 //  Copyright © 2015 Atlantbh. All rights reserved.
 //
 import UIKit
-import Alamofire
-import ObjectMapper
-import AlamofireObjectMapper
 
-class TMDMovie: Mappable {
+class TMDMovie {
     
     var title : String?
-    /*var imagePath : String?
+    var imagePath : String?
     var genres = [String]?()
     var description : String?
     var releaseDate : String?
     var runtime : Int? //in minutes
     var voteAvg : Double?
-    var voteCount : Int?*/
+    var voteCount : Int?
     
-    required init?(_ map: Map){
-        
-    }
-    
-    func mapping(map: Map) {
-        self.title <- map["results[1].original_title"]
-        /*self.imagePath <- map["poster_path"]
-        self.genres <- map["genres"]["name"]
-        self.description <- map ["overview"]
+    init(title: String) {
+        self.title = title
+        /*
+        self.imagePath = imagePath
+        self.genres = genres
+        self.description = description
         self.releaseDate <- map["release_date"]
         self.runtime <- map["runtime"]
         self.voteAvg <- map["vote_average"]
-        self.voteCount <- map["vote_count"]*/
-        
+        self.voteCount <- map["vote_count"]
+        */
     }
     
 }
