@@ -100,7 +100,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSize(width: (CGRectGetWidth(collectionView.bounds)/2)-5.0  , height: 250)
+        return CGSize(width: (CGRectGetWidth(collectionView.bounds)/self.displayColumns)-2.5*self.displayColumns, height: 250)
             
     }
     
