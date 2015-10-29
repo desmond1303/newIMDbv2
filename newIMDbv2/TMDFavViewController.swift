@@ -13,21 +13,52 @@ import AlamofireObjectMapper
 import SDWebImage
 
 class TMDFavViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var apiFilter = "top_rated"
 
+    @IBAction func filterButton(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Choose a filter", message: nil, preferredStyle: .ActionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+
+        
+        let TopRatedFilterAction = UIAlertAction(title: "Top Rated", style: .Default) { (action) in
+            self.apiFilter = "top_rated"
+            self.TMDFavCollectionOutlet.reloadData()
+            self.viewDidLoad()
+        }
+        alertController.addAction(TopRatedFilterAction)
+        
+        let PopularFilterAction = UIAlertAction(title: "Popular", style: .Default) { (action) in
+            self.apiFilter = "popular"
+            self.TMDFavCollectionOutlet.reloadData()
+            self.viewDidLoad()
+        } 
+        alertController.addAction(PopularFilterAction)
+        
+        
+        
+        self.presentViewController(alertController, animated: true) {
+            // ...
+        }
+    }
     @IBOutlet weak var TMDFavCollectionOutlet: UICollectionView!
 
     var movies : [TMDMovie]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         TMDFavCollectionOutlet.delegate = self
         TMDFavCollectionOutlet.dataSource = self
         
         self.navigationItem.title = "Favorites"
        
         
-        let url = "https://api.themoviedb.org/3/movie/top_rated"
+        let url = "https://api.themoviedb.org/3/movie/\(self.apiFilter)"
         let urlParamteres = ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"]
         
         Alamofire
@@ -37,12 +68,6 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
                 
                 self.TMDFavCollectionOutlet.reloadData()
         }
-
-        
-        /*
-        let filterButton = UIBarButtonItem(title: "Filter", style: UIBarButtonItemStyle.Plain, target: self, action: "")
-        self.navigationItem.rightBarButtonItem = filterButton
-        */
         
     }
     
@@ -66,22 +91,22 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         cell.movieTitleLabel.text = currentMovie.title
         
-        //let block: SDWebImageCompletionBlock! =
-        
         cell.movieImage.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
             (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
             print(self)
         })
         
-        
-        
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        return CGSize(width: (CGRectGetWidth(collectionView.bounds)/2)-5.0  , height: 250)
+            
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //let senderTile =
         if segue.identifier == "showMovieDetails" {
-            // pass data to next view
             let detailsViewController = segue.destinationViewController as! TMDMovieDetailsViewController
             detailsViewController.displayInLabel("Test")
         }
@@ -95,4 +120,3 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
 
 
 }
-

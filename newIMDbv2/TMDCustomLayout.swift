@@ -8,20 +8,26 @@
 
 import UIKit
 
-class TMDCustomLayout: UICollectionViewLayout {
+class TMDCustomLayout: UICollectionViewFlowLayout {
     
     override func prepareLayout() {
-        <#code#>
-    }
-    
-    override func collectionViewContentSize() -> CGSize {
-        <#code#>
+        super.prepareLayout()
     }
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        <#code#>
-    }
-    
-    
+        var elementsInRect = [UICollectionViewLayoutAttributes]()
 
+        for i in 0..<self.collectionView!.numberOfSections() {
+            for j in 0..<self.collectionView!.numberOfItemsInSection(i) {
+                let indexPath: NSIndexPath = NSIndexPath(forRow: j, inSection: i)
+                    
+                let attr: UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
+                elementsInRect.append(attr)
+                
+            }
+        }
+        
+        return elementsInRect
+    }
+ 
 }
