@@ -27,15 +27,13 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         let TopRatedFilterAction = UIAlertAction(title: "Top Rated", style: .Default) { (action) in
             self.apiFilter = "top_rated"
-            self.TMDFavCollectionOutlet.reloadData()
-            self.viewDidLoad()
+            self.viewWillAppear(true)
         }
         alertController.addAction(TopRatedFilterAction)
         
         let PopularFilterAction = UIAlertAction(title: "Popular", style: .Default) { (action) in
             self.apiFilter = "popular"
-            self.TMDFavCollectionOutlet.reloadData()
-            self.viewDidLoad()
+            self.viewWillAppear(true)
         }
         alertController.addAction(PopularFilterAction)
         
@@ -50,6 +48,18 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     var movies : [TMDMovie]?
     var displayColumns: CGFloat = 2
     
+    override func viewWillAppear(animated: Bool) {
+        let url = "https://api.themoviedb.org/3/movie/\(self.apiFilter)"
+        let urlParamteres = ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"]
+        
+        Alamofire
+            .request(.GET, url, parameters: urlParamteres)
+            .responseArray("results") { (response:[TMDMovie]?, error: ErrorType?) in
+                self.movies = response!
+                self.TMDFavCollectionOutlet.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,18 +68,6 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         self.navigationItem.title = "Favorites"
        
-        
-        let url = "https://api.themoviedb.org/3/movie/\(self.apiFilter)"
-        let urlParamteres = ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"]
-        
-        Alamofire
-            .request(.GET, url, parameters: urlParamteres)
-            .responseArray("results") { (response:[TMDMovie]?, error: ErrorType?) in
-                self.movies = response!
-                
-                self.TMDFavCollectionOutlet.reloadData()
-        }
-        
     }
     
     
