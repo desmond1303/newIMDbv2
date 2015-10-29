@@ -36,7 +36,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.apiFilter = "popular"
             self.TMDFavCollectionOutlet.reloadData()
             self.viewDidLoad()
-        } 
+        }
         alertController.addAction(PopularFilterAction)
         
         
@@ -48,6 +48,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var TMDFavCollectionOutlet: UICollectionView!
 
     var movies : [TMDMovie]?
+    var displayColumns: CGFloat = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,17 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         return CGSize(width: (CGRectGetWidth(collectionView.bounds)/2)-5.0  , height: 250)
             
     }
+    
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        if toInterfaceOrientation.isPortrait {
+            self.displayColumns = 2
+        }
+        else {
+            self.displayColumns = 4
+        }
+        self.TMDFavCollectionOutlet.reloadData()
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMovieDetails" {
