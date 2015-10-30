@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */; };
+		7D712CD21BE3AD6D0035ED28 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D712CD11BE3AD6D0035ED28 /* TestTableViewController.swift */; };
 		7D72837C1BD8C4B300AE1030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */; };
 		7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */; };
 		7D7283811BD8C4B300AE1030 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D72837F1BD8C4B300AE1030 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		66278C3DB3D18314B7AB5942 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		71989E7BA1822AA0687611B4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDCustomLayout.swift; sourceTree = "<group>"; };
+		7D712CD11BE3AD6D0035ED28 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		7D7283781BD8C4B300AE1030 /* newIMDbv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newIMDbv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDFavViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */,
 				7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */,
+				7D712CD11BE3AD6D0035ED28 /* TestTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DFBF6BE1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift in Sources */,
+				7D712CD21BE3AD6D0035ED28 /* TestTableViewController.swift in Sources */,
 				7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */,
 				7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */,
 				7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */,

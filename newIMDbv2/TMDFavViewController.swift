@@ -68,9 +68,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         TMDFavCollectionOutlet.dataSource = self
         
         self.navigationItem.title = "Favorites"
-       
     }
-    
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1

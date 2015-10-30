@@ -21,18 +21,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XSI-xt-jiE">
-                                    <size key="itemSize" width="155" height="250"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <collectionViewLayout key="collectionViewLayout" id="IeD-bb-mdm" customClass="TMDCustomLayout" customModule="newIMDbv2" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieTile" id="Jbf-vg-tMo" customClass="TMDFavCell" customModule="newIMDbv2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="155" height="250"/>
+                                        <rect key="frame" x="0.0" y="65" width="155" height="248"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="155" height="248"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLj-SZ-w7A">
@@ -42,7 +37,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NtW-2S-Yys" customClass="TMDMovieTileImageView" customModule="newIMDbv2" customModuleProvider="target">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NtW-2S-Yys" customClass="TMDMovieTileImageView" customModule="newIMDbv2" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="155" height="203"/>
                                                     <animations/>
                                                 </imageView>
@@ -71,6 +66,7 @@
                                             <constraint firstItem="NtW-2S-Yys" firstAttribute="top" secondItem="Jbf-vg-tMo" secondAttribute="topMargin" constant="-8" id="nUV-w1-Y1m"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="NtW-2S-Yys" secondAttribute="bottom" constant="39" id="yvl-CN-hsd"/>
                                         </constraints>
+                                        <size key="customSize" width="155" height="248"/>
                                         <connections>
                                             <outlet property="movieImage" destination="NtW-2S-Yys" id="YQv-Ka-ycp"/>
                                             <outlet property="movieTitleLabel" destination="gLj-SZ-w7A" id="hSh-eA-V8N"/>
@@ -79,7 +75,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featuredMovieTile" id="pa6-y3-jaD" customClass="TMDFavCell" customModule="newIMDbv2" customModuleProvider="target">
-                                        <rect key="frame" x="223" y="64" width="155" height="250"/>
+                                        <rect key="frame" x="165" y="64" width="155" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="250"/>
@@ -125,6 +121,7 @@
                                             <constraint firstItem="mML-Sl-CKC" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" constant="9" id="usE-iH-tE0"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Yxd-aY-IV9" secondAttribute="bottom" constant="-8" id="x8F-q5-BVI"/>
                                         </constraints>
+                                        <size key="customSize" width="155" height="250"/>
                                         <connections>
                                             <outlet property="movieImage" destination="Yxd-aY-IV9" id="QQG-qH-9cW"/>
                                             <outlet property="movieTitleLabel" destination="VQb-GA-jbm" id="nnB-fk-SLa"/>
@@ -325,33 +322,53 @@
             </objects>
             <point key="canvasLocation" x="110" y="612.75"/>
         </scene>
-        <!--Root View Controller-->
+        <!--That Other Screen-->
         <scene sceneID="vIu-AC-9ch">
             <objects>
-                <tableViewController id="Hh5-x0-c7x" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RdG-1K-lub">
+                <tableViewController id="Hh5-x0-c7x" customClass="TestTableViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="RdG-1K-lub">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bla" id="aa8-AR-72t">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bla" textLabel="jmQ-Ye-Wh6" style="IBUITableViewCellStyleDefault" id="aa8-AR-72t">
+                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aa8-AR-72t" id="IoZ-zA-xph">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jmQ-Ye-Wh6">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Hh5-x0-c7x" id="Tsc-WE-brX"/>
                             <outlet property="delegate" destination="Hh5-x0-c7x" id="WvG-Td-2d7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Hwi-Y8-XIK"/>
+                    <navigationItem key="navigationItem" title="That Other Screen" id="Hwi-Y8-XIK">
+                        <barButtonItem key="leftBarButtonItem" title="Change" id="L8V-Jw-gTJ">
+                            <connections>
+                                <action selector="chaneButton:" destination="Hh5-x0-c7x" id="1B1-lq-5vb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="RdG-1K-lub" id="kPe-AL-UHf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fX2-q7-LP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
