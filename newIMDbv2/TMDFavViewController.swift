@@ -127,7 +127,11 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMovieDetails" {
             let detailsViewController = segue.destinationViewController as! TMDMovieDetailsViewController
-            detailsViewController.displayInLabel("Test")
+            let senderCell = sender as! TMDFavCell
+            detailsViewController.movieTitle = senderCell.movieTitleLabel.text
+            detailsViewController.movieYear = senderCell.movieYearLabel.text
+            detailsViewController.movieImage = senderCell.movieImage.image
+            detailsViewController.movieDescription = "This is a description"
         }
         
     }

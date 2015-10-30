@@ -8,18 +8,64 @@
 
 import UIKit
 
-class TMDMovieDetailsViewController: UIViewController {
-
-    @IBOutlet weak var movieTitleLabel: UILabel!
+class TMDMovieDetailsViewController: UITableViewController {
     
-    func displayInLabel(string: String) {
-        self.movieTitleLabel.text = string;
-    }
+    @IBOutlet var MovieDetailsTableViewOutlet: UITableView!
+
+    var movieTitle: String?
+    var movieYear: String?
+    var movieImage: UIImage?
+    var movieDescription: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 2
+        }
+        else {
+            return 1
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "About" : "Reviews"
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let cell = MovieDetailsTableViewOutlet.dequeueReusableCellWithIdentifier("movieDetailsHeader", forIndexPath: indexPath) as! TMDDetailsTableViewCell
+                
+                cell.movieTitleLabel.text = self.movieTitle
+                cell.movieYearLabel.text = self.movieYear
+                cell.movieImageView.image = self.movieImage
+                
+                return cell
+            }
+            else {
+                let cell = MovieDetailsTableViewOutlet.dequeueReusableCellWithIdentifier("movieDetailsBody", forIndexPath: indexPath) as! TMDDetailsDescriptionTableViewCell
+                
+                cell.movieDescriptionTextbox.text = self.movieDescription
+                
+                return cell
+            }
 
-        // Do any additional setup after loading the view.
+        }
+        else {
+            let cell = MovieDetailsTableViewOutlet.dequeueReusableCellWithIdentifier("movieDetailsBody", forIndexPath: indexPath) as! TMDDetailsDescriptionTableViewCell
+            
+            cell.movieDescriptionTextbox.text = "The review Section"
+            
+            return cell
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
