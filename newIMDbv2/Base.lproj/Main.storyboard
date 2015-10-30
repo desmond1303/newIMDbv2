@@ -23,86 +23,62 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewLayout key="collectionViewLayout" id="IeD-bb-mdm" customClass="TMDCustomLayout" customModule="newIMDbv2" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieTile" id="Jbf-vg-tMo" customClass="TMDFavCell" customModule="newIMDbv2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="65" width="155" height="248"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="248"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLj-SZ-w7A">
-                                                    <rect key="frame" x="8" y="201" width="138" height="27"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NtW-2S-Yys" customClass="TMDMovieTileImageView" customModule="newIMDbv2" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="203"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFP-Gv-9wn">
-                                                    <rect key="frame" x="9" y="226" width="138" height="16"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="NtW-2S-Yys" secondAttribute="trailing" constant="-8" id="1b3-DY-80O"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="gLj-SZ-w7A" secondAttribute="trailing" constant="1" id="EIK-Bc-Ztg"/>
-                                            <constraint firstItem="lFP-Gv-9wn" firstAttribute="leading" secondItem="Jbf-vg-tMo" secondAttribute="leadingMargin" constant="1" id="Hk1-D6-xMD"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="gLj-SZ-w7A" secondAttribute="bottom" constant="14" id="OaB-6Q-OY1"/>
-                                            <constraint firstItem="gLj-SZ-w7A" firstAttribute="leading" secondItem="Jbf-vg-tMo" secondAttribute="leadingMargin" id="TFB-nl-7Fa"/>
-                                            <constraint firstItem="lFP-Gv-9wn" firstAttribute="trailing" secondItem="Jbf-vg-tMo" secondAttribute="trailingMargin" id="Tv7-rA-N7M"/>
-                                            <constraint firstItem="lFP-Gv-9wn" firstAttribute="bottom" secondItem="Jbf-vg-tMo" secondAttribute="bottomMargin" id="UVE-Pc-nzf"/>
-                                            <constraint firstItem="NtW-2S-Yys" firstAttribute="leading" secondItem="Jbf-vg-tMo" secondAttribute="leadingMargin" constant="-8" id="X8X-zQ-Rxm"/>
-                                            <constraint firstItem="NtW-2S-Yys" firstAttribute="top" secondItem="Jbf-vg-tMo" secondAttribute="topMargin" constant="-8" id="nUV-w1-Y1m"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="NtW-2S-Yys" secondAttribute="bottom" constant="39" id="yvl-CN-hsd"/>
-                                        </constraints>
-                                        <size key="customSize" width="155" height="248"/>
-                                        <connections>
-                                            <outlet property="movieImage" destination="NtW-2S-Yys" id="YQv-Ka-ycp"/>
-                                            <outlet property="movieTitleLabel" destination="gLj-SZ-w7A" id="hSh-eA-V8N"/>
-                                            <outlet property="movieYearLabel" destination="lFP-Gv-9wn" id="xjz-Oy-UqU"/>
-                                            <segue destination="mJw-kT-DgG" kind="show" identifier="showMovieDetails" id="gdp-q8-dVP"/>
-                                        </connections>
-                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featuredMovieTile" id="pa6-y3-jaD" customClass="TMDFavCell" customModule="newIMDbv2" customModuleProvider="target">
-                                        <rect key="frame" x="165" y="64" width="155" height="250"/>
+                                        <rect key="frame" x="0.0" y="64" width="150" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yxd-aY-IV9" customClass="TMDMovieTileImageView" customModule="newIMDbv2" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
                                                     <animations/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mML-Sl-CKC">
-                                                    <rect key="frame" x="17" y="221" width="130" height="21"/>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-Z6-Dd5">
+                                                    <rect key="frame" x="0.0" y="205" width="150" height="45"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XyW-SY-9GP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mML-Sl-CKC">
+                                                                <rect key="frame" x="20" y="25" width="110" height="15"/>
+                                                                <animations/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="15" id="G4e-1H-OlS"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQb-GA-jbm">
+                                                                <rect key="frame" x="20" y="5" width="110" height="20"/>
+                                                                <animations/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="b3X-rk-6XW"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <size key="shadowOffset" width="1" height="1"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="mML-Sl-CKC" secondAttribute="trailing" constant="12" id="11h-mc-4nx"/>
+                                                            <constraint firstAttribute="trailing" secondItem="VQb-GA-jbm" secondAttribute="trailing" constant="20" id="7oK-LG-cqh"/>
+                                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="leading" secondItem="XyW-SY-9GP" secondAttribute="leadingMargin" constant="12" id="8ht-Zf-7aQ"/>
+                                                            <constraint firstAttribute="bottom" secondItem="mML-Sl-CKC" secondAttribute="bottom" constant="5" id="bXW-Uq-uQr"/>
+                                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="top" secondItem="XyW-SY-9GP" secondAttribute="top" constant="5" id="tM9-Np-oCh"/>
+                                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="leading" secondItem="XyW-SY-9GP" secondAttribute="leading" constant="20" id="vpJ-gK-JbD"/>
+                                                        </constraints>
+                                                    </view>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <size key="shadowOffset" width="1" height="1"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQb-GA-jbm">
-                                                    <rect key="frame" x="17" y="200" width="130" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <size key="shadowOffset" width="1" height="1"/>
-                                                </label>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="u2R-i0-Prr"/>
+                                                    </constraints>
+                                                    <blurEffect style="light"/>
+                                                </visualEffectView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -110,18 +86,15 @@
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="trailing" secondItem="pa6-y3-jaD" secondAttribute="trailingMargin" id="5Bc-Fj-jGD"/>
-                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="bottom" secondItem="pa6-y3-jaD" secondAttribute="bottomMargin" id="B9e-Fp-InB"/>
-                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="top" secondItem="VQb-GA-jbm" secondAttribute="bottom" id="MHZ-gS-l9u"/>
+                                            <constraint firstItem="qy1-Z6-Dd5" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" constant="-8" id="5Pn-Ym-WMV"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="qy1-Z6-Dd5" secondAttribute="trailing" constant="-8" id="R5N-2p-XuM"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="qy1-Z6-Dd5" secondAttribute="bottom" constant="-8" id="a82-a0-HIh"/>
                                             <constraint firstItem="Yxd-aY-IV9" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" constant="-8" id="b6X-Fo-AoW"/>
                                             <constraint firstItem="Yxd-aY-IV9" firstAttribute="top" secondItem="pa6-y3-jaD" secondAttribute="topMargin" constant="-8" id="dui-XI-oXp"/>
-                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="trailing" secondItem="pa6-y3-jaD" secondAttribute="trailingMargin" id="kvM-Gm-7cm"/>
-                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" constant="9" id="ldi-84-fu5"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Yxd-aY-IV9" secondAttribute="trailing" constant="-8" id="sYM-HE-1SP"/>
-                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" constant="9" id="usE-iH-tE0"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Yxd-aY-IV9" secondAttribute="bottom" constant="-8" id="x8F-q5-BVI"/>
                                         </constraints>
-                                        <size key="customSize" width="155" height="250"/>
+                                        <size key="customSize" width="150" height="250"/>
                                         <connections>
                                             <outlet property="movieImage" destination="Yxd-aY-IV9" id="QQG-qH-9cW"/>
                                             <outlet property="movieTitleLabel" destination="VQb-GA-jbm" id="nnB-fk-SLa"/>
@@ -393,7 +366,4 @@
             <point key="canvasLocation" x="110" y="1328"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="yq6-SC-orO"/>
-    </inferredMetricsTieBreakers>
 </document>

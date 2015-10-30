@@ -91,7 +91,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
             cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("featuredMovieTile", forIndexPath: indexPath) as? TMDFavCell
         }
         else {
-            cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("movieTile", forIndexPath: indexPath) as? TMDFavCell
+            cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("featuredMovieTile", forIndexPath: indexPath) as? TMDFavCell
         }
         
         cell!.movieTitleLabel.text = currentMovie.title
