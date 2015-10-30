@@ -114,8 +114,9 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="Yxd-aY-IV9" secondAttribute="bottom" constant="-8" id="x8F-q5-BVI"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="movieImageView" destination="Yxd-aY-IV9" id="OOb-ti-hXi"/>
-                                            <outlet property="movieTitleLabel" destination="VQb-GA-jbm" id="PNg-tM-g1a"/>
+                                            <outlet property="featMovieImageView" destination="Yxd-aY-IV9" id="gpl-UK-YHN"/>
+                                            <outlet property="featMovieTitleLabel" destination="VQb-GA-jbm" id="XqY-md-1q7"/>
+                                            <segue destination="mJw-kT-DgG" kind="show" identifier="showMovieDetails" id="GAD-ej-6tK"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -362,4 +363,7 @@
             <point key="canvasLocation" x="110" y="1328"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GAD-ej-6tK"/>
+    </inferredMetricsTieBreakers>
 </document>

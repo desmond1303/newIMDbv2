@@ -10,6 +10,6 @@ import UIKit
 
 class TMDFeaturedCell: UICollectionViewCell {
     
-    @IBOutlet weak var movieTitleLabel: UILabel!
-    @IBOutlet weak var movieImageView: UIImageView!
+    @IBOutlet weak var featMovieTitleLabel: UILabel!
+    @IBOutlet weak var featMovieImageView: UIImageView!
 }

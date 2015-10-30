@@ -91,9 +91,9 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         if indexPath.item == 0 && self.displayColumns == 2 {
             let cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("featuredMovieTile", forIndexPath: indexPath) as! TMDFeaturedCell
             
-            cell.movieTitleLabel.text = currentMovie.title
+            cell.featMovieTitleLabel.text = currentMovie.title
             
-            cell.movieImageView.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
+            cell.featMovieImageView.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
                 (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
                 print(self)
             })
