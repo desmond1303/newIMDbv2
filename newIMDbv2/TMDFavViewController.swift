@@ -58,6 +58,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
                 self.movies = response!
                 self.TMDFavCollectionOutlet.reloadData()
         }
+        
     }
     
     override func viewDidLoad() {

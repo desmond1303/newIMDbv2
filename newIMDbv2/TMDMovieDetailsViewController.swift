@@ -19,6 +19,8 @@ class TMDMovieDetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = self.movieTitle
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
