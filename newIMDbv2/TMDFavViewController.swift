@@ -87,37 +87,27 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let currentMovie = self.movies![indexPath.row]
+        var cell: TMDFavCell?
         
         if indexPath.item == 0 && self.displayColumns == 2 {
-            let cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("featuredMovieTile", forIndexPath: indexPath) as! TMDFeaturedCell
-            
-            cell.featMovieTitleLabel.text = currentMovie.title
-            
-            cell.featMovieImageView.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
-                (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
-                print(self)
-            })
-            
-            return cell
+            cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("featuredMovieTile", forIndexPath: indexPath) as? TMDFavCell
         }
         else {
-            let cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("movieTile", forIndexPath: indexPath) as! TMDFavCell
-            
-            cell.movieTitleLabel.text = currentMovie.title
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy"
-            cell.movieYearLabel.text = dateFormatter.stringFromDate(currentMovie.getDate())
-            
-            cell.movieImage.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
-                (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
-                print(self)
-            })
-            
-            return cell
+            cell = TMDFavCollectionOutlet.dequeueReusableCellWithReuseIdentifier("movieTile", forIndexPath: indexPath) as? TMDFavCell
         }
         
+        cell!.movieTitleLabel.text = currentMovie.title
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        cell!.movieYearLabel.text = dateFormatter.stringFromDate(currentMovie.getDate())
+        
+        cell!.movieImage.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
+            (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
+            print(self)
+        })
+        
+        return cell!
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

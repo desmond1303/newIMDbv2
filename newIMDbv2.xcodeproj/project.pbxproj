@@ -20,7 +20,6 @@
 		7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */; };
 		7DFBF6BC1BE3701900DD305E /* TMDDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFBF6BB1BE3701900DD305E /* TMDDetailsTableViewCell.swift */; };
 		7DFBF6BE1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFBF6BD1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift */; };
-		7DFBF6C01BE3833A00DD305E /* TMDFeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFBF6BF1BE3833A00DD305E /* TMDFeaturedCell.swift */; };
 		8B687863B9EFF53CF40CC7B2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71989E7BA1822AA0687611B4 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +41,6 @@
 		7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovieDetailsViewController.swift; sourceTree = "<group>"; };
 		7DFBF6BB1BE3701900DD305E /* TMDDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		7DFBF6BD1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDDetailsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
-		7DFBF6BF1BE3833A00DD305E /* TMDFeaturedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDFeaturedCell.swift; sourceTree = "<group>"; };
 		D2544607DF9A8A25BA818600 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				7D72838F1BD8CA7A00AE1030 /* TMDFavCell.swift */,
-				7DFBF6BF1BE3833A00DD305E /* TMDFeaturedCell.swift */,
 				7D7283911BD8CB5900AE1030 /* TMDMovieTileImageView.swift */,
 				7DFBF6BB1BE3701900DD305E /* TMDDetailsTableViewCell.swift */,
 				7DFBF6BD1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift */,
@@ -278,7 +275,6 @@
 				7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */,
 				7DFBF6BC1BE3701900DD305E /* TMDDetailsTableViewCell.swift in Sources */,
 				7D72837C1BD8C4B300AE1030 /* AppDelegate.swift in Sources */,
-				7DFBF6C01BE3833A00DD305E /* TMDFeaturedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

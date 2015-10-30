@@ -78,19 +78,28 @@
                                             <segue destination="mJw-kT-DgG" kind="show" identifier="showMovieDetails" id="gdp-q8-dVP"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featuredMovieTile" id="pa6-y3-jaD" customClass="TMDFeaturedCell" customModule="newIMDbv2" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featuredMovieTile" id="pa6-y3-jaD" customClass="TMDFavCell" customModule="newIMDbv2" customModuleProvider="target">
                                         <rect key="frame" x="223" y="64" width="155" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yxd-aY-IV9">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yxd-aY-IV9" customClass="TMDMovieTileImageView" customModule="newIMDbv2" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="155" height="250"/>
                                                     <animations/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQb-GA-jbm">
-                                                    <rect key="frame" x="8" y="8" width="139" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mML-Sl-CKC">
+                                                    <rect key="frame" x="17" y="221" width="130" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <size key="shadowOffset" width="1" height="1"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQb-GA-jbm">
+                                                    <rect key="frame" x="17" y="200" width="130" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,18 +114,22 @@
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="top" secondItem="pa6-y3-jaD" secondAttribute="topMargin" id="1By-ZG-mQO"/>
+                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="trailing" secondItem="pa6-y3-jaD" secondAttribute="trailingMargin" id="5Bc-Fj-jGD"/>
+                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="bottom" secondItem="pa6-y3-jaD" secondAttribute="bottomMargin" id="B9e-Fp-InB"/>
+                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="top" secondItem="VQb-GA-jbm" secondAttribute="bottom" id="MHZ-gS-l9u"/>
                                             <constraint firstItem="Yxd-aY-IV9" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" constant="-8" id="b6X-Fo-AoW"/>
                                             <constraint firstItem="Yxd-aY-IV9" firstAttribute="top" secondItem="pa6-y3-jaD" secondAttribute="topMargin" constant="-8" id="dui-XI-oXp"/>
-                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="trailing" secondItem="pa6-y3-jaD" secondAttribute="trailingMargin" id="hk2-ug-JBB"/>
-                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" id="pNj-Py-ges"/>
+                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="trailing" secondItem="pa6-y3-jaD" secondAttribute="trailingMargin" id="kvM-Gm-7cm"/>
+                                            <constraint firstItem="VQb-GA-jbm" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" constant="9" id="ldi-84-fu5"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Yxd-aY-IV9" secondAttribute="trailing" constant="-8" id="sYM-HE-1SP"/>
+                                            <constraint firstItem="mML-Sl-CKC" firstAttribute="leading" secondItem="pa6-y3-jaD" secondAttribute="leadingMargin" constant="9" id="usE-iH-tE0"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Yxd-aY-IV9" secondAttribute="bottom" constant="-8" id="x8F-q5-BVI"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="featMovieImageView" destination="Yxd-aY-IV9" id="gpl-UK-YHN"/>
-                                            <outlet property="featMovieTitleLabel" destination="VQb-GA-jbm" id="XqY-md-1q7"/>
-                                            <segue destination="mJw-kT-DgG" kind="show" identifier="showMovieDetails" id="GAD-ej-6tK"/>
+                                            <outlet property="movieImage" destination="Yxd-aY-IV9" id="QQG-qH-9cW"/>
+                                            <outlet property="movieTitleLabel" destination="VQb-GA-jbm" id="nnB-fk-SLa"/>
+                                            <outlet property="movieYearLabel" destination="mML-Sl-CKC" id="08M-Ri-sCp"/>
+                                            <segue destination="mJw-kT-DgG" kind="show" identifier="showMovieDetails" id="yq6-SC-orO"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -364,6 +377,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GAD-ej-6tK"/>
+        <segue reference="yq6-SC-orO"/>
     </inferredMetricsTieBreakers>
 </document>
