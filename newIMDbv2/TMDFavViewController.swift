@@ -90,6 +90,10 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         cell.movieTitleLabel.text = currentMovie.title
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        cell.movieYearLabel.text = dateFormatter.stringFromDate(currentMovie.getDate())
+        
         cell.movieImage.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
             (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
             print(self)
@@ -100,7 +104,12 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        return CGSize(width: (CGRectGetWidth(collectionView.bounds)/self.displayColumns)-2.5*self.displayColumns, height: 250)
+        if indexPath.item == 0 && self.displayColumns == 2 {
+            return CGSize(width: CGRectGetWidth(collectionView.bounds), height: 250)
+        }
+        else {
+            return CGSize(width: (CGRectGetWidth(collectionView.bounds)/self.displayColumns)-2.5*self.displayColumns, height: 250)
+        }
             
     }
     

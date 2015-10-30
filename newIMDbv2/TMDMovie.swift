@@ -23,6 +23,8 @@ class TMDMovie : Mappable {
     var voteAvg : Double?
     var voteCount : Int?
     
+    var dateFormatter = NSDateFormatter()
+    
     required init (_ map: Map) {
         
     }
@@ -38,6 +40,11 @@ class TMDMovie : Mappable {
         self.runtime <- map["runtime"]
         self.voteAvg <- map["vote_average"]
         self.voteCount <- map["vote_count"]
+    }
+    
+    func getDate() -> NSDate {
+        self.dateFormatter.dateFormat = "yyyy-mm-dd"
+        return self.dateFormatter.dateFromString(self.releaseDate!)!
     }
     
 }
