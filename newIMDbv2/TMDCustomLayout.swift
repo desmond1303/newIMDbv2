@@ -15,19 +15,37 @@ class TMDCustomLayout: UICollectionViewFlowLayout {
     }
     
     override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        var elementsInRect = [UICollectionViewLayoutAttributes]()
-
-        for i in 0..<self.collectionView!.numberOfSections() {
-            for j in 0..<self.collectionView!.numberOfItemsInSection(i) {
-                let indexPath: NSIndexPath = NSIndexPath(forRow: j, inSection: i)
-                    
-                let attr: UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-                elementsInRect.append(attr)
+        
+        let collectionView: UICollectionView = self.collectionView!
+        let insets: UIEdgeInsets = collectionView.contentInset
+        let offset: CGPoint = collectionView.contentOffset
+        let minY: CGFloat = -insets.top;
+        
+        let attributes =  super.layoutAttributesForElementsInRect(rect)
+        
+        if (offset.y < minY) {
+            
+            // Figure out how much we've pulled down
+            let deltaY: CGFloat = CGFloat.abs(offset.y - minY)
+            
+            for attrs in attributes! {
                 
+                // Locate the header attributes
+                let kind: String = attrs.representedElementKind!
+                if (kind == UICollectionElementKindSectionHeader) {
+                    
+                    // Adjust the header's height and y based on how much the user
+                    // has pulled down.
+                    let headerSize: CGSize = self.headerReferenceSize
+                    var headerRect: CGRect = attrs.frame
+                    headerRect.size.height = minY > headerSize.height + deltaY ? minY : headerSize.height
+                    headerRect.origin.y = headerRect.origin.y - deltaY;
+                    attrs.frame = headerRect
+                    break
+                }
             }
         }
-        
-        return elementsInRect
+        return attributes
     }
  
 }
