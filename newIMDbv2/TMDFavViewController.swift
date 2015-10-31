@@ -38,7 +38,6 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         alertController.addAction(PopularFilterAction)
         
         
-        
         self.presentViewController(alertController, animated: true) {
             // ...
         }
@@ -49,6 +48,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     var displayColumns: CGFloat = 2
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         let url = "https://api.themoviedb.org/3/movie/\(self.apiFilter)"
         let urlParamteres = ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"]
         
