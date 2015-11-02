@@ -20,6 +20,7 @@
 		7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7283981BD8D70000AE1030 /* TMDMovie.swift */; };
 		7DD546761BE75E900047E3AE /* TMDMovieReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD546751BE75E900047E3AE /* TMDMovieReview.swift */; };
 		7DD546781BE761B20047E3AE /* TMDReviewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD546771BE761B20047E3AE /* TMDReviewTableCell.swift */; };
+		7DD5467D1BE7734A0047E3AE /* TMDDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD5467C1BE7734A0047E3AE /* TMDDetailsTableViewController.m */; };
 		7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */; };
 		7DFBF6BC1BE3701900DD305E /* TMDDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFBF6BB1BE3701900DD305E /* TMDDetailsTableViewCell.swift */; };
 		7DFBF6BE1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFBF6BD1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift */; };
@@ -44,6 +45,9 @@
 		7D7283981BD8D70000AE1030 /* TMDMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovie.swift; sourceTree = "<group>"; };
 		7DD546751BE75E900047E3AE /* TMDMovieReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovieReview.swift; sourceTree = "<group>"; };
 		7DD546771BE761B20047E3AE /* TMDReviewTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDReviewTableCell.swift; sourceTree = "<group>"; };
+		7DD5467A1BE7734A0047E3AE /* newIMDbv2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "newIMDbv2-Bridging-Header.h"; sourceTree = "<group>"; };
+		7DD5467B1BE7734A0047E3AE /* TMDDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDDetailsTableViewController.h; sourceTree = "<group>"; };
+		7DD5467C1BE7734A0047E3AE /* TMDDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDDetailsTableViewController.m; sourceTree = "<group>"; };
 		7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDMovieDetailsViewController.swift; sourceTree = "<group>"; };
 		7DFBF6BB1BE3701900DD305E /* TMDDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		7DFBF6BD1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDDetailsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,9 +127,20 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		7DD546791BE773090047E3AE /* ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5467B1BE7734A0047E3AE /* TMDDetailsTableViewController.h */,
+				7DD5467C1BE7734A0047E3AE /* TMDDetailsTableViewController.m */,
+				7DD5467A1BE7734A0047E3AE /* newIMDbv2-Bridging-Header.h */,
+			);
+			name = ObjectiveC;
+			sourceTree = "<group>";
+		};
 		7DEEED4E1BDA8C6C001C26EA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7DD546791BE773090047E3AE /* ObjectiveC */,
 				7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */,
 				7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */,
 				7D712CD11BE3AD6D0035ED28 /* TestTableViewController.swift */,
@@ -182,6 +197,7 @@
 		7D7283701BD8C4B300AE1030 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Atlantbh;
 				TargetAttributes = {
@@ -281,6 +297,7 @@
 				7D712CD21BE3AD6D0035ED28 /* TestTableViewController.swift in Sources */,
 				7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */,
 				7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */,
+				7DD5467D1BE7734A0047E3AE /* TMDDetailsTableViewController.m in Sources */,
 				7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */,
 				7D7283901BD8CA7A00AE1030 /* TMDFavCell.swift in Sources */,
 				7D7283921BD8CB5900AE1030 /* TMDMovieTileImageView.swift in Sources */,
@@ -398,10 +415,13 @@
 			baseConfigurationReference = D2544607DF9A8A25BA818600 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = newIMDbv2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ba.atlantbh.newIMDbv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "newIMDbv2/newIMDbv2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -410,10 +430,12 @@
 			baseConfigurationReference = 66278C3DB3D18314B7AB5942 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = newIMDbv2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ba.atlantbh.newIMDbv2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "newIMDbv2/newIMDbv2-Bridging-Header.h";
 			};
 			name = Release;
 		};

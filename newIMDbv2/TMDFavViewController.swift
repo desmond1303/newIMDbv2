@@ -62,6 +62,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         TMDFavCollectionOutlet.delegate = self
