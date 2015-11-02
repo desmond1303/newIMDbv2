@@ -149,7 +149,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieDetailsHeader" id="5dz-ut-VVh" customClass="TMDDetailsTableViewCell" customModule="newIMDbv2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="movieDetailsHeader" id="5dz-ut-VVh" customClass="TMDDetailsTableViewCell" customModule="newIMDbv2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5dz-ut-VVh" id="n7r-e2-Dcq">
@@ -240,7 +240,7 @@
                                     <outlet property="votesProgressLabel" destination="LSk-xs-NMr" id="uaZ-Nb-rlv"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieDetailsBody" rowHeight="100" id="4VK-pq-FtG" customClass="TMDDetailsDescriptionTableViewCell" customModule="newIMDbv2" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="movieDetailsBody" rowHeight="100" id="4VK-pq-FtG" customClass="TMDDetailsDescriptionTableViewCell" customModule="newIMDbv2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="314" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4VK-pq-FtG" id="8YE-19-7r7">

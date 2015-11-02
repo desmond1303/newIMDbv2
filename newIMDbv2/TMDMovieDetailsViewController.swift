@@ -112,7 +112,7 @@ class TMDMovieDetailsViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 
         if (indexPath.section == 0 && indexPath.row == 1) || indexPath.section == 1 {
-            return CGFloat(150)
+            return CGFloat(130)
         }
         return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
     }
