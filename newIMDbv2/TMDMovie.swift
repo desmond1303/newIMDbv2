@@ -12,6 +12,7 @@ import AlamofireObjectMapper
 
 class TMDMovie : Mappable {
     
+    var id: Int?
     var title : String?
     var originalTitle : String?
     var imagePath : String?
@@ -30,6 +31,7 @@ class TMDMovie : Mappable {
     }
     
     func mapping(map: Map) {
+        self.id <- map["id"]
         self.title <- map["title"]
         self.originalTitle <- map["original_title"]
         self.imagePath <- map["poster_path"]

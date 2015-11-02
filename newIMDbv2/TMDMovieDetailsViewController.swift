@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import SDWebImage
 
 class TMDMovieDetailsViewController: UITableViewController {
@@ -14,6 +15,28 @@ class TMDMovieDetailsViewController: UITableViewController {
     @IBOutlet var MovieDetailsTableViewOutlet: UITableView!
 
     var movie: TMDMovie?
+    var reviews: [TMDMovieReview]?
+    var noReviews: Bool = false
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let url = "https://api.themoviedb.org/3/movie/\(self.movie!.id!)/reviews"
+        let urlParamteres = ["api_key":"d94cca56f8edbdf236c0ccbacad95aa1"]
+        
+        Alamofire
+            .request(.GET, url, parameters: urlParamteres)
+            .responseArray("results") { (response:[TMDMovieReview]?, error: ErrorType?) in
+                if let allReviews = response {
+                    self.reviews = allReviews
+                }
+                else {
+                    self.noReviews = true
+                }
+                self.MovieDetailsTableViewOutlet.reloadData()
+        }
+        
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +53,7 @@ class TMDMovieDetailsViewController: UITableViewController {
             return 2
         }
         else {
-            return 1
+            return self.reviews?.count ?? 1
         }
     }
     
@@ -69,9 +92,17 @@ class TMDMovieDetailsViewController: UITableViewController {
 
         }
         else {
-            let cell = MovieDetailsTableViewOutlet.dequeueReusableCellWithIdentifier("movieDetailsBody", forIndexPath: indexPath) as! TMDDetailsDescriptionTableViewCell
+            let cell = MovieDetailsTableViewOutlet.dequeueReusableCellWithIdentifier("movieReview", forIndexPath: indexPath) as! TMDReviewTableCell
             
-            cell.movieDescriptionTextbox.text = "The review Section"
+            if noReviews == true {
+                cell.authorLabel.text = "No Reivews For This Movie Yet"
+                return cell
+            }
+            
+            if let review = reviews?[indexPath.item] {
+                cell.authorLabel.text = review.author
+                cell.reviewText.text = review.content
+            }
             
             return cell
         }
