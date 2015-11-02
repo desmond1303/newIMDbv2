@@ -143,7 +143,7 @@
         <scene sceneID="e7b-Nq-Eiq">
             <objects>
                 <tableViewController id="mJw-kT-DgG" customClass="TMDMovieDetailsViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="18" sectionFooterHeight="18" id="01a-as-SaS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="200" sectionHeaderHeight="18" sectionFooterHeight="18" id="01a-as-SaS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -283,14 +283,14 @@
                                     <outlet property="movieDescriptionTextbox" destination="vdA-an-XgZ" id="SWL-tv-04M"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieReview" id="BOv-1P-JbX" customClass="TMDReviewTableCell" customModule="newIMDbv2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="414" width="600" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="movieReview" rowHeight="150" id="BOv-1P-JbX" customClass="TMDReviewTableCell" customModule="newIMDbv2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="414" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOv-1P-JbX" id="a0m-kZ-xtJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxx-en-lV2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxx-en-lV2">
                                             <rect key="frame" x="8" y="8" width="584" height="21"/>
                                             <animations/>
                                             <constraints>
@@ -300,30 +300,29 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1QU-pj-rGI">
-                                            <rect key="frame" x="8" y="37" width="584" height="154"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXQ-P9-LGJ">
+                                            <rect key="frame" x="8" y="37" width="551" height="104"/>
                                             <animations/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="1QU-pj-rGI" firstAttribute="top" secondItem="Lxx-en-lV2" secondAttribute="bottom" constant="8" id="3rt-OJ-ct0"/>
-                                        <constraint firstAttribute="trailing" secondItem="1QU-pj-rGI" secondAttribute="trailing" constant="8" id="9PZ-qA-SRI"/>
+                                        <constraint firstItem="AXQ-P9-LGJ" firstAttribute="leading" secondItem="a0m-kZ-xtJ" secondAttribute="leading" constant="8" id="371-hn-qk1"/>
+                                        <constraint firstAttribute="bottom" secondItem="AXQ-P9-LGJ" secondAttribute="bottom" constant="8" id="ELU-1g-gbU"/>
                                         <constraint firstItem="Lxx-en-lV2" firstAttribute="leading" secondItem="a0m-kZ-xtJ" secondAttribute="leadingMargin" id="HhE-nG-oXD"/>
+                                        <constraint firstAttribute="trailing" secondItem="AXQ-P9-LGJ" secondAttribute="trailing" constant="8" id="ONj-uC-f0D"/>
                                         <constraint firstItem="Lxx-en-lV2" firstAttribute="trailing" secondItem="a0m-kZ-xtJ" secondAttribute="trailingMargin" id="QJ3-8J-fhw"/>
-                                        <constraint firstAttribute="bottom" secondItem="1QU-pj-rGI" secondAttribute="bottom" constant="8" id="Ubx-eG-gTZ"/>
                                         <constraint firstItem="Lxx-en-lV2" firstAttribute="top" secondItem="a0m-kZ-xtJ" secondAttribute="topMargin" id="byb-2E-kQg"/>
-                                        <constraint firstItem="1QU-pj-rGI" firstAttribute="leading" secondItem="a0m-kZ-xtJ" secondAttribute="leading" constant="8" id="njd-wz-jcd"/>
+                                        <constraint firstItem="AXQ-P9-LGJ" firstAttribute="top" secondItem="Lxx-en-lV2" secondAttribute="bottom" constant="8" id="rQ8-UL-NOF"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
                                     <outlet property="authorLabel" destination="Lxx-en-lV2" id="17Q-8c-Mvp"/>
-                                    <outlet property="reviewText" destination="1QU-pj-rGI" id="egt-t8-PbJ"/>
+                                    <outlet property="reviewText" destination="AXQ-P9-LGJ" id="BnW-rQ-4Mq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

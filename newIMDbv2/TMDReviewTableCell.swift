@@ -11,7 +11,7 @@ import UIKit
 class TMDReviewTableCell: UITableViewCell {
 
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var reviewText: UITextView!
+    @IBOutlet weak var reviewText: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,4 +23,6 @@ class TMDReviewTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
+    
 }
