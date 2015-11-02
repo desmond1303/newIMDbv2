@@ -13,7 +13,9 @@ class TMDDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var movieYearLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
-
+    @IBOutlet weak var votesProgreessView: UIProgressView!
+    @IBOutlet weak var votesProgressLabel: UILabel!
+    @IBOutlet weak var voteCountLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -128,16 +128,15 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         self.TMDFavCollectionOutlet.reloadData()
     }
-
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let sender = sender as! TMDFavCell
+        
         if segue.identifier == "showMovieDetails" {
             let detailsViewController = segue.destinationViewController as! TMDMovieDetailsViewController
-            let senderCell = sender as! TMDFavCell
-            detailsViewController.movieTitle = senderCell.movieTitleLabel.text
-            detailsViewController.movieYear = senderCell.movieYearLabel.text
-            detailsViewController.movieImage = senderCell.movieImage.image
-            detailsViewController.movieDescription = "This is a description"
+            let indexPath: NSIndexPath = self.TMDFavCollectionOutlet.indexPathForCell(sender)!
+            
+            detailsViewController.movie = self.movies![indexPath.item]
         }
         
     }

@@ -185,17 +185,49 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yNa-SC-O7p">
+                                            <rect key="frame" x="169" y="58" width="390" height="2"/>
+                                            <animations/>
+                                        </progressView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.7" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSk-xs-NMr">
+                                            <rect key="frame" x="567" y="48" width="25" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="qRK-NY-Ffe"/>
+                                                <constraint firstAttribute="width" constant="25" id="xoa-cx-sTG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="277489 votes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTL-Ii-wMU">
+                                            <rect key="frame" x="169" y="64" width="120" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="Zhj-zD-1kB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="eXQ-NB-P4c" firstAttribute="top" secondItem="7DY-vY-jJx" secondAttribute="bottom" id="6BE-tH-92p"/>
                                         <constraint firstItem="eXQ-NB-P4c" firstAttribute="leading" secondItem="9x7-Fn-QDN" secondAttribute="trailing" constant="8" id="7Fz-9u-QCo"/>
                                         <constraint firstItem="7DY-vY-jJx" firstAttribute="leading" secondItem="9x7-Fn-QDN" secondAttribute="trailing" constant="8" id="AOF-6e-dF7"/>
+                                        <constraint firstItem="yNa-SC-O7p" firstAttribute="leading" secondItem="n7r-e2-Dcq" secondAttribute="leading" constant="169" id="Bpo-wE-t2H"/>
+                                        <constraint firstItem="oTL-Ii-wMU" firstAttribute="leading" secondItem="9x7-Fn-QDN" secondAttribute="trailing" constant="8" id="CGN-xT-gut"/>
+                                        <constraint firstAttribute="trailing" secondItem="yNa-SC-O7p" secondAttribute="trailing" constant="41" id="DSo-Wh-I1O"/>
+                                        <constraint firstItem="LSk-xs-NMr" firstAttribute="top" secondItem="7DY-vY-jJx" secondAttribute="bottom" constant="19" id="EEB-D4-j4r"/>
                                         <constraint firstItem="7DY-vY-jJx" firstAttribute="top" secondItem="n7r-e2-Dcq" secondAttribute="topMargin" id="Gz8-Sx-YKG"/>
+                                        <constraint firstItem="yNa-SC-O7p" firstAttribute="top" secondItem="eXQ-NB-P4c" secondAttribute="bottom" constant="8" id="Q0j-es-2oC"/>
                                         <constraint firstItem="7DY-vY-jJx" firstAttribute="trailing" secondItem="n7r-e2-Dcq" secondAttribute="trailingMargin" id="YHf-ot-pIo"/>
+                                        <constraint firstItem="oTL-Ii-wMU" firstAttribute="top" secondItem="yNa-SC-O7p" secondAttribute="bottom" constant="4" id="YXh-Vi-wL6"/>
                                         <constraint firstItem="9x7-Fn-QDN" firstAttribute="leading" secondItem="n7r-e2-Dcq" secondAttribute="leadingMargin" id="fei-NZ-HjM"/>
                                         <constraint firstItem="9x7-Fn-QDN" firstAttribute="bottom" secondItem="n7r-e2-Dcq" secondAttribute="bottomMargin" id="onZ-a8-LP4"/>
                                         <constraint firstItem="9x7-Fn-QDN" firstAttribute="top" secondItem="n7r-e2-Dcq" secondAttribute="topMargin" id="shs-9l-Ab2"/>
+                                        <constraint firstItem="LSk-xs-NMr" firstAttribute="trailing" secondItem="n7r-e2-Dcq" secondAttribute="trailingMargin" id="yiL-Iy-5SP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -203,6 +235,9 @@
                                     <outlet property="movieImageView" destination="9x7-Fn-QDN" id="bYq-a7-Ada"/>
                                     <outlet property="movieTitleLabel" destination="7DY-vY-jJx" id="mOi-rj-JJX"/>
                                     <outlet property="movieYearLabel" destination="eXQ-NB-P4c" id="5lb-le-RJ7"/>
+                                    <outlet property="voteCountLabel" destination="oTL-Ii-wMU" id="5WB-yb-4iI"/>
+                                    <outlet property="votesProgreessView" destination="yNa-SC-O7p" id="roB-GL-CEJ"/>
+                                    <outlet property="votesProgressLabel" destination="LSk-xs-NMr" id="uaZ-Nb-rlv"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieDetailsBody" id="4VK-pq-FtG" customClass="TMDDetailsDescriptionTableViewCell" customModule="newIMDbv2" customModuleProvider="target">
@@ -212,7 +247,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vdA-an-XgZ">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdA-an-XgZ">
                                             <rect key="frame" x="8" y="8" width="584" height="183"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -7,20 +7,18 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TMDMovieDetailsViewController: UITableViewController {
     
     @IBOutlet var MovieDetailsTableViewOutlet: UITableView!
 
-    var movieTitle: String?
-    var movieYear: String?
-    var movieImage: UIImage?
-    var movieDescription: String?
+    var movie: TMDMovie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = self.movieTitle
+        self.navigationItem.title = self.movie?.title
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -45,16 +43,26 @@ class TMDMovieDetailsViewController: UITableViewController {
             if indexPath.row == 0 {
                 let cell = MovieDetailsTableViewOutlet.dequeueReusableCellWithIdentifier("movieDetailsHeader", forIndexPath: indexPath) as! TMDDetailsTableViewCell
                 
-                cell.movieTitleLabel.text = self.movieTitle
-                cell.movieYearLabel.text = self.movieYear
-                cell.movieImageView.image = self.movieImage
+                cell.movieTitleLabel.text = self.movie?.title
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy"
+                cell.movieYearLabel.text = dateFormatter.stringFromDate((self.movie?.getDate())!)
+                
+                cell.movieImageView.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(self.movie!.imagePath!)"), completed: {
+                    (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
+                    print(self)
+                })
+                
+                cell.votesProgreessView.progress = Float(self.movie!.voteAvg!  / 10)
+                cell.votesProgressLabel.text = String(self.movie!.voteAvg!)
+                cell.voteCountLabel.text = "\(String(self.movie!.voteCount!)) votes"
                 
                 return cell
             }
             else {
                 let cell = MovieDetailsTableViewOutlet.dequeueReusableCellWithIdentifier("movieDetailsBody", forIndexPath: indexPath) as! TMDDetailsDescriptionTableViewCell
                 
-                cell.movieDescriptionTextbox.text = self.movieDescription
+                cell.movieDescriptionTextbox.text = self.movie?.description
                 
                 return cell
             }
