@@ -14,12 +14,16 @@ class TMDRLMMovies: Object {
     dynamic var title : String = ""
     dynamic var originalTitle : String = ""
     dynamic var imagePath : String = ""
-    dynamic var genres = NSMutableArray()
+    //dynamic var genres = NSMutableArray()
     dynamic var movieDescription : String = ""
     dynamic var releaseDate : String = ""
     dynamic var popularity : Double = 0
     dynamic var runtime : Int = 0 //in minutes
     dynamic var voteAvg : Double = 0
     dynamic var voteCount : Int = 0
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
 }

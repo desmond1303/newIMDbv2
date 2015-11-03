@@ -2,14 +2,16 @@
 //  TMDDetailsTableViewController.h
 //  newIMDbv2
 //
-//  Created by Dino Praso on 2.11.15.
+//  Created by Dino Praso on 3.11.15.
 //  Copyright © 2015 Atlantbh. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+@import Alamofire;
+@import SDWebImage;
 
-@interface TMDDetailsTableViewController : UITableViewCell
+@interface TMDDetailsTableViewController : UITableViewController
 
-    //@property (nonatomic) TMDMovie movies;
+@property Class *movie;
 
 @end

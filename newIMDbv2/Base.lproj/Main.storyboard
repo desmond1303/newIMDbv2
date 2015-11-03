@@ -333,7 +333,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="MovieDetailsTableViewOutlet" destination="01a-as-SaS" id="XeO-PC-4q5"/>
+                        <outlet property="MovieDetailsTableViewOutlet" destination="01a-as-SaS" id="xY3-XG-y0k"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IM1-ax-47J" userLabel="First Responder" sceneMemberID="firstResponder"/>
