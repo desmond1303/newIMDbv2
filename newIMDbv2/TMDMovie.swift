@@ -30,6 +30,21 @@ class TMDMovie : Mappable {
         
     }
     
+    init(fromObject object: TMDRLMMovies) {
+        self.id = object.id
+        self.title = object.title
+        self.originalTitle = object.originalTitle
+        self.imagePath = object.imagePath
+        // genres
+        self.description = object.movieDescription
+        self.popularity = object.popularity
+        self.releaseDate = object.releaseDate
+        // runtime
+        self.voteAvg = object.voteAvg
+        self.voteCount = object.voteCount
+
+    }
+    
     func mapping(map: Map) {
         self.id <- map["id"]
         self.title <- map["title"]

@@ -7,25 +7,41 @@
 //
 
 import UIKit
+import SDWebImage
 import RealmSwift
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "RLMfavoriteMovieTile"
 
 class TMDRLMCollectionViewController: UICollectionViewController {
+    
+    var displayColumns: CGFloat = 2
 
-    var favoriteMovies: [TMDMovie]?
+    @IBOutlet var collectionViewOutlet: UICollectionView!
+    var favoriteMovies = [TMDMovie]()
     let realm = try! Realm()
+    
+    func getRealmMovies() {
+        let RLMFavs = realm.objects(TMDRLMMovies)
+        self.favoriteMovies.removeAll()
+        for fav in RLMFavs {
+            self.favoriteMovies.append(TMDMovie(fromObject: fav))
+            self.collectionViewOutlet.reloadData()
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getRealmMovies()
+        self.collectionViewOutlet.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        self.navigationItem.title = "RLM Favorites"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -49,22 +65,52 @@ class TMDRLMCollectionViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return self.favoriteMovies.count
+        
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! TMDFavCell
+        
+        let currentMovie = self.favoriteMovies[indexPath.item]
     
+        cell.movieTitleLabel.text = currentMovie.title!
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        cell.movieYearLabel.text = dateFormatter.stringFromDate(currentMovie.getDate())
+        
+        cell.movieImage.sd_setImageWithURL(NSURL(string: "http://image.tmdb.org/t/p/w342/\(currentMovie.imagePath!)"), completed: {
+            (image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
+            print(self)
+        })
         // Configure the cell
     
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        return CGSize(width: (CGRectGetWidth(collectionView.bounds)/self.displayColumns)-2.5*self.displayColumns, height: 270)
+        
+    }
+    
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        if toInterfaceOrientation.isPortrait {
+            self.displayColumns = 2
+        }
+        else {
+            self.displayColumns = 4
+        }
+        self.collectionViewOutlet.reloadData()
+    }
+
 
     // MARK: UICollectionViewDelegate
 
