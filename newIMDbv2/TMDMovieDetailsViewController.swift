@@ -9,14 +9,37 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import RealmSwift
 
 class TMDMovieDetailsViewController: UITableViewController {
     
-    @IBOutlet var MovieDetailsTableViewOutlet: UITableView!
-
     var movie: TMDMovie?
     var reviews: [TMDMovieReview]?
     var noReviews: Bool = false
+    let realm = try! Realm()
+    
+    @IBOutlet var MovieDetailsTableViewOutlet: UITableView!
+
+    @IBAction func addFavoriteButton(sender: AnyObject) {
+        
+        let favoriteMovie = TMDRLMMovies()
+        favoriteMovie.id = self.movie!.id!
+        favoriteMovie.title = self.movie!.title!
+        
+        favoriteMovie.originalTitle = self.movie!.originalTitle!
+        favoriteMovie.imagePath = self.movie!.imagePath!
+        //favoriteMovie.genres = self.movie!.genres!
+        favoriteMovie.movieDescription = self.movie!.description!
+        favoriteMovie.releaseDate = self.movie!.releaseDate!
+        favoriteMovie.popularity = self.movie!.popularity!
+        
+        favoriteMovie.voteAvg = self.movie!.voteAvg!
+        favoriteMovie.voteCount = self.movie!.voteCount!
+        
+        try! self.realm.write {
+            self.realm.add(favoriteMovie)
+        }
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,11 +59,9 @@ class TMDMovieDetailsViewController: UITableViewController {
         }
         
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationItem.title = self.movie?.title
     }
     
@@ -79,6 +100,15 @@ class TMDMovieDetailsViewController: UITableViewController {
                 cell.votesProgreessView.progress = Float(self.movie!.voteAvg!  / 10)
                 cell.votesProgressLabel.text = String(self.movie!.voteAvg!)
                 cell.voteCountLabel.text = "\(String(self.movie!.voteCount!)) votes"
+                
+                let movieThatExists = self.realm.objects(TMDRLMMovies).filter("id == \(self.movie!.id!)").first
+                
+                if movieThatExists != nil {
+                    cell.favortiesButton.setTitle("Remove From Favorites", forState: .Normal)
+                } else {
+                    cell.favortiesButton.setTitle("Add To Favorites", forState: .Normal)
+                }
+
                 
                 return cell
             }
