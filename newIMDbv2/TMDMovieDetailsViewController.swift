@@ -17,28 +17,41 @@ class TMDMovieDetailsViewController: UITableViewController {
     var reviews: [TMDMovieReview]?
     var noReviews: Bool = false
     let realm = try! Realm()
+    var isFav = false
     
     @IBOutlet var MovieDetailsTableViewOutlet: UITableView!
 
     @IBAction func addFavoriteButton(sender: AnyObject) {
         
-        let favoriteMovie = TMDRLMMovies()
-        favoriteMovie.id = self.movie!.id!
-        favoriteMovie.title = self.movie!.title!
-        
-        favoriteMovie.originalTitle = self.movie!.originalTitle!
-        favoriteMovie.imagePath = self.movie!.imagePath!
-        //favoriteMovie.genres = self.movie!.genres!
-        favoriteMovie.movieDescription = self.movie!.description!
-        favoriteMovie.releaseDate = self.movie!.releaseDate!
-        favoriteMovie.popularity = self.movie!.popularity!
-        
-        favoriteMovie.voteAvg = self.movie!.voteAvg!
-        favoriteMovie.voteCount = self.movie!.voteCount!
-        
-        try! self.realm.write {
-            self.realm.add(favoriteMovie)
+        if isFav {
+            let movie = realm.objects(TMDRLMMovies).filter("id = \(self.movie!.id!)")
+            try! self.realm.write {
+                self.realm.delete(movie)
+            }
         }
+        else {
+            let favoriteMovie = TMDRLMMovies()
+            favoriteMovie.id = self.movie!.id!
+            favoriteMovie.title = self.movie!.title!
+            
+            favoriteMovie.originalTitle = self.movie!.originalTitle!
+            favoriteMovie.imagePath = self.movie!.imagePath!
+            //favoriteMovie.genres = self.movie!.genres!
+            favoriteMovie.movieDescription = self.movie!.description!
+            favoriteMovie.releaseDate = self.movie!.releaseDate!
+            favoriteMovie.popularity = self.movie!.popularity!
+            
+            favoriteMovie.voteAvg = self.movie!.voteAvg!
+            favoriteMovie.voteCount = self.movie!.voteCount!
+            
+            try! self.realm.write {
+                self.realm.add(favoriteMovie)
+            }
+
+        }
+        
+        self.MovieDetailsTableViewOutlet.reloadData()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -105,8 +118,10 @@ class TMDMovieDetailsViewController: UITableViewController {
                 
                 if movieThatExists != nil {
                     cell.favortiesButton.setTitle("Remove From Favorites", forState: .Normal)
+                    self.isFav = true
                 } else {
                     cell.favortiesButton.setTitle("Add To Favorites", forState: .Normal)
+                    self.isFav = false
                 }
 
                 
