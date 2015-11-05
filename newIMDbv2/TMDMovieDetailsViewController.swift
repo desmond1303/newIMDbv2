@@ -29,6 +29,9 @@ class TMDMovieDetailsViewController: UITableViewController {
             try! self.realm.write {
                 self.realm.delete(movie)
             }
+            
+            self.favoritesBarButtonItem.image = UIImage(named: "FavNotSelected")
+            
         }
         else {
             let favoriteMovie = TMDRLMMovies()
@@ -48,6 +51,8 @@ class TMDMovieDetailsViewController: UITableViewController {
             try! self.realm.write {
                 self.realm.add(favoriteMovie)
             }
+            
+            self.favoritesBarButtonItem.image = UIImage(named: "FavSelected")
 
         }
         
