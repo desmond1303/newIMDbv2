@@ -511,6 +511,7 @@
                                     <outlet property="movieImage" destination="qim-FI-eqF" id="cwF-rn-sjK"/>
                                     <outlet property="movieTitleLabel" destination="H41-sE-b7C" id="4Th-rS-CCD"/>
                                     <outlet property="movieYearLabel" destination="DOg-xx-B52" id="hCA-vs-AR1"/>
+                                    <segue destination="mJw-kT-DgG" kind="show" identifier="showMovieDetails" id="xYX-FL-d0X"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -529,4 +530,7 @@
             <point key="canvasLocation" x="809" y="1328"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xYX-FL-d0X"/>
+    </inferredMetricsTieBreakers>
 </document>

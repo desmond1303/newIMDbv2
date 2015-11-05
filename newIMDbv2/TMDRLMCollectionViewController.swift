@@ -110,6 +110,19 @@ class TMDRLMCollectionViewController: UICollectionViewController {
         }
         self.collectionViewOutlet.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let sender = sender as! TMDFavCell
+        
+        if segue.identifier == "showMovieDetails" {
+            let detailsViewController = segue.destinationViewController as! TMDMovieDetailsViewController
+            let indexPath: NSIndexPath = self.collectionViewOutlet.indexPathForCell(sender)!
+            
+            detailsViewController.movie = self.favoriteMovies[indexPath.item]
+        }
+        
+    }
+
 
 
     // MARK: UICollectionViewDelegate
