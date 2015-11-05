@@ -16,7 +16,6 @@ class TMDDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var votesProgreessView: UIProgressView!
     @IBOutlet weak var votesProgressLabel: UILabel!
     @IBOutlet weak var voteCountLabel: UILabel!
-    @IBOutlet weak var favortiesButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -21,6 +21,7 @@ class TMDMovieDetailsViewController: UITableViewController {
     
     @IBOutlet var MovieDetailsTableViewOutlet: UITableView!
 
+    @IBOutlet weak var favoritesBarButtonItem: UIBarButtonItem!
     @IBAction func addFavoriteButton(sender: AnyObject) {
         
         if isFav {
@@ -71,6 +72,17 @@ class TMDMovieDetailsViewController: UITableViewController {
                 self.MovieDetailsTableViewOutlet.reloadData()
         }
         
+        let movieThatExists = self.realm.objects(TMDRLMMovies).filter("id == \(self.movie!.id!)").first
+        
+        if movieThatExists != nil {
+            self.favoritesBarButtonItem.image = UIImage(named: "FavSelected")
+            self.isFav = true
+        } else {
+            self.favoritesBarButtonItem.image = UIImage(named: "FavNotSelected")
+            self.isFav = false
+        }
+
+        
     }
     
     override func viewDidLoad() {
@@ -113,17 +125,6 @@ class TMDMovieDetailsViewController: UITableViewController {
                 cell.votesProgreessView.progress = Float(self.movie!.voteAvg!  / 10)
                 cell.votesProgressLabel.text = String(self.movie!.voteAvg!)
                 cell.voteCountLabel.text = "\(String(self.movie!.voteCount!)) votes"
-                
-                let movieThatExists = self.realm.objects(TMDRLMMovies).filter("id == \(self.movie!.id!)").first
-                
-                if movieThatExists != nil {
-                    cell.favortiesButton.setTitle("Remove From Favorites", forState: .Normal)
-                    self.isFav = true
-                } else {
-                    cell.favortiesButton.setTitle("Add To Favorites", forState: .Normal)
-                    self.isFav = false
-                }
-
                 
                 return cell
             }
