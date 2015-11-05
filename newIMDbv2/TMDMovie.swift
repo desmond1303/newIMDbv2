@@ -17,7 +17,7 @@ class TMDMovie : Mappable {
     var originalTitle : String?
     var imagePath : String?
     var genres = [Int]?()
-    var description : String?
+    var movieDescription : String?
     var releaseDate : String?
     var popularity : Double?
     var runtime : Int? //in minutes
@@ -36,7 +36,7 @@ class TMDMovie : Mappable {
         self.originalTitle = object.originalTitle
         self.imagePath = object.imagePath
         // genres
-        self.description = object.movieDescription
+        self.movieDescription = object.movieDescription
         self.popularity = object.popularity
         self.releaseDate = object.releaseDate
         // runtime
@@ -51,7 +51,7 @@ class TMDMovie : Mappable {
         self.originalTitle <- map["original_title"]
         self.imagePath <- map["poster_path"]
         self.genres <- map["genre_ids"]
-        self.description <- map["overview"]
+        self.movieDescription <- map["overview"]
         self.popularity <- map["popularity"]
         self.releaseDate <- map["release_date"]
         self.runtime <- map["runtime"]

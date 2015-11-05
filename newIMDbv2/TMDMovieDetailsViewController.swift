@@ -41,7 +41,7 @@ class TMDMovieDetailsViewController: UITableViewController {
             favoriteMovie.originalTitle = self.movie!.originalTitle!
             favoriteMovie.imagePath = self.movie!.imagePath!
             //favoriteMovie.genres = self.movie!.genres!
-            favoriteMovie.movieDescription = self.movie!.description!
+            favoriteMovie.movieDescription = self.movie!.movieDescription!
             favoriteMovie.releaseDate = self.movie!.releaseDate!
             favoriteMovie.popularity = self.movie!.popularity!
             
@@ -136,7 +136,7 @@ class TMDMovieDetailsViewController: UITableViewController {
             else {
                 let cell = MovieDetailsTableViewOutlet.dequeueReusableCellWithIdentifier("movieDetailsBody", forIndexPath: indexPath) as! TMDDetailsDescriptionTableViewCell
                 
-                cell.movieDescriptionTextbox.text = self.movie?.description
+                cell.movieDescriptionTextbox.text = self.movie?.movieDescription
                 
                 return cell
             }
