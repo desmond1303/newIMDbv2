@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Realm
 import RealmSwift
 
 @objc class TMDRLMMovies: Object {

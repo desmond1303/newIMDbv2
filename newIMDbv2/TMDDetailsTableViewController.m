@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *MovieDetailsTableViewOutlet;
 
-@property (strong, nonatomic) TMDMovieReview *reviews;
+@property (strong, nonatomic) NSMutableArray<TMDMovieReview *> *reviews;
 @property (strong, nonatomic) RLMRealm *realm;
 
 @property (strong, nonatomic) IBOutlet UITableView *DetailsTableViewOutlet;
@@ -31,11 +31,11 @@ bool isFav = NO;
     if (isFav) {
         
         
-        RLMResults<TMDRLMMovies *> *movie = [TMDRLMMovies allObjects];
+        //RLMResults *movie = [TMDRLMMovies allObjects];
         
-        [_realm beginWriteTransaction];
-        [_realm deleteObject:movie];
-        [_realm commitWriteTransaction];
+        //[_realm beginWriteTransaction];
+        //[_realm deleteObject:movie];
+        //[_realm commitWriteTransaction];
          
         
         
@@ -86,8 +86,8 @@ bool isFav = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSString *moveititle = _movie.title;
+    
+    [self navigationItem].title = _movie.title;
    
 
 }
@@ -105,17 +105,52 @@ bool isFav = NO;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(section == 0) return 2;
-    else return 1; //self.reviews.count
+    else return [_reviews count];
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return section == 0 ? @"About" : @"Reviews";
+ }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TMDDetailsTableViewCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsHeader" forIndexPath:indexPath];
-    [cell movieTitleLabel].text = @"Test";
+    if(indexPath.section == 0) {
+        if(indexPath.row == 0) {
+            TMDDetailsTableViewCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsHeader" forIndexPath:indexPath];
+            
+            [cell movieTitleLabel].text = _movie.title;
+            [[cell movieImageView] sd_setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w342/%@", _movie.imagePath]]];
+            
+            //[cell votesProgreessView].progress = (float)_movie.voteAvg/10;
+            //[cell votesProgressLabel].text = _movie.voteAvg;
+            //[cell voteCountLabel].text = [NSString stringWithFormat:@"%@ votes", _movie.voteCount];
+            
+            // Configure the cell...
+            
+            return cell;
+        }
+        else {
+            TMDDetailsDescriptionTableViewCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsHeader" forIndexPath:indexPath];
+            
+            [cell movieDescriptionTextbox].text = _movie.movieDescription;
+            
+            return cell;
+        }
+    }
+    else {
+        TMDReviewTableCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsHeader" forIndexPath:indexPath];
+        
+        if(noReviews) {
+            [cell authorLabel].text = @"No Reviews For This Movie Yet";
+            return cell;
+        }
+        
+        //[cell authorLabel].text = [_reviews[indexPath.row] author];
+        //[cell reviewText].text = [_reviews[indexPath.row] content];
+        
+        return cell;
+    }
     
-    // Configure the cell...
-    
-    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
