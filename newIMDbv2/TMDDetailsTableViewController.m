@@ -30,14 +30,14 @@ bool isFav = NO;
     _realm = [RLMRealm defaultRealm];
     if (isFav) {
         
-        /*
-         RLMResults *movie = [TMDRLMMovies objectsWhere:@"test"];
+        
+        RLMResults<TMDRLMMovies *> *movie = [TMDRLMMovies allObjects];
         
         [_realm beginWriteTransaction];
         [_realm deleteObject:movie];
         [_realm commitWriteTransaction];
          
-         */
+        
         
         [self favoritesBarButtonItem].image = [UIImage imageNamed:@"FavNotSelected"];
         
@@ -77,7 +77,7 @@ bool isFav = NO;
     
     
     AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters];
-    NSMutableArray *response = [aWrapper getResponse];
+    //NSMutableArray *response = [aWrapper getResponse];
     
 
     

@@ -29,8 +29,10 @@ import Alamofire
 
     }
     
+    /*
     @objc func getResponse() -> NSMutableArray {
         return NSMutableDictionary(dictionary: self.reviews!)
     }
+    */
 
 }

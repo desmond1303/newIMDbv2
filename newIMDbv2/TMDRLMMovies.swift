@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Realm
 import RealmSwift
 
-class TMDRLMMovies: Object {
+@objc class TMDRLMMovies: Object {
     dynamic var movieId = 0
     dynamic var title : String = ""
     dynamic var originalTitle : String = ""
@@ -22,8 +23,8 @@ class TMDRLMMovies: Object {
     dynamic var voteAvg : Double = 0
     dynamic var voteCount : Int = 0
     
-    override static func primaryKey() -> String? {
-        return "movieId"
-    }
+    //override static func primaryKey() -> String? {
+      //  return "movieId"
+    //}
     
 }
