@@ -10,20 +10,106 @@
 #import "newIMDbv2-Swift.h"
 
 @interface TMDDetailsTableViewController ()
+
 @property (strong, nonatomic) IBOutlet UITableView *MovieDetailsTableViewOutlet;
+
+@property (strong, nonatomic) TMDMovieReview *reviews;
+@property (strong, nonatomic) RLMRealm *realm;
+
+@property (strong, nonatomic) IBOutlet UITableView *DetailsTableViewOutlet;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *favoritesBarButtonItem;
 
 @end
 
 @implementation TMDDetailsTableViewController
 
+bool noReviews = NO;
+bool isFav = NO;
+
+- (IBAction)favoritesBarButtonAction:(id)sender {
+    _realm = [RLMRealm defaultRealm];
+    if (isFav) {
+        
+        /*
+         RLMResults *movie = [TMDRLMMovies objectsWhere:@"test"];
+        
+        [_realm beginWriteTransaction];
+        [_realm deleteObject:movie];
+        [_realm commitWriteTransaction];
+         
+         */
+        
+        [self favoritesBarButtonItem].image = [UIImage imageNamed:@"FavNotSelected"];
+        
+        isFav = NO;
+    }
+    else {
+        
+        TMDRLMMovies *favoriteMovie = [[TMDRLMMovies alloc] init];
+        favoriteMovie.movieId = _movie.movieId;
+        favoriteMovie.title = _movie.title;
+        favoriteMovie.originalTitle = _movie.originalTitle;
+        favoriteMovie.imagePath = _movie.imagePath;
+        //favoriteMovie.genres = _movie.genres;
+        favoriteMovie.movieDescription = _movie.movieDescription;
+        favoriteMovie.releaseDate = _movie.releaseDate;
+        //favoriteMovie.popularity = _movie.popularity;
+        //favoriteMovie.voteAvg = _movie.voteAvg;
+        //favoriteMovie.voteCount = _movie.voteCount;
+        
+        [_realm beginWriteTransaction];
+        [_realm addObject:favoriteMovie];
+        [_realm commitWriteTransaction];
+        
+        [self favoritesBarButtonItem].image = [UIImage imageNamed:@"FavSelected"];
+        
+        isFav = YES;
+        
+    }
+    
+    [[self MovieDetailsTableViewOutlet] reloadData];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSString *url = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%ld/reviews", (long)_movie.movieId];
+    NSDictionary *urlParameters = @{@"api_key":@"d94cca56f8edbdf236c0ccbacad95aa1"};
+    
+
+    Alam
+    
+    Alamofirew
+    .request(.GET, url, parameters: urlParamteres)
+    .responseArray("results") { (response:[TMDMovieReview]?, error: ErrorType?) in
+        if let allReviews = response {
+            self.reviews = allReviews
+        }
+        else {
+            self.noReviews = true
+        }
+        self.MovieDetailsTableViewOutlet.reloadData()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    NSString *moveititle = _movie.title;
+   
+
 }
 
 - (void)didReceiveMemoryWarning {

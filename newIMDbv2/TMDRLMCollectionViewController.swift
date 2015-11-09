@@ -115,7 +115,7 @@ class TMDRLMCollectionViewController: UICollectionViewController {
         let sender = sender as! TMDFavCell
         
         if segue.identifier == "showMovieDetails" {
-            let detailsViewController = segue.destinationViewController as! TMDMovieDetailsViewController
+            let detailsViewController = segue.destinationViewController as! TMDDetailsTableViewController
             let indexPath: NSIndexPath = self.collectionViewOutlet.indexPathForCell(sender)!
             
             detailsViewController.movie = self.favoriteMovies[indexPath.item]

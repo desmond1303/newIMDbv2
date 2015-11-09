@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import <Realm/Realm.h>
 @import Alamofire;
 @import SDWebImage;
 
+@class TMDMovie;
+@class TMDMovieReview;
+
 @interface TMDDetailsTableViewController : UITableViewController
 
-@property Class *movie;
+@property (strong, nonatomic) TMDMovie *movie;
 
 @end

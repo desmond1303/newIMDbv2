@@ -142,7 +142,7 @@
         <!--Title-->
         <scene sceneID="e7b-Nq-Eiq">
             <objects>
-                <tableViewController id="mJw-kT-DgG" customClass="TMDMovieDetailsViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mJw-kT-DgG" customClass="TMDDetailsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="240" sectionHeaderHeight="18" sectionFooterHeight="18" id="01a-as-SaS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,7 +251,7 @@
                                             <rect key="frame" x="8" y="8" width="584" height="83"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -335,18 +335,19 @@
                     <navigationItem key="navigationItem" title="Title" id="O5S-Zy-A1i">
                         <barButtonItem key="rightBarButtonItem" image="FavNotSelected" id="Fbb-UT-pVX">
                             <connections>
-                                <action selector="addFavoriteButton:" destination="mJw-kT-DgG" id="vF5-ZH-JR9"/>
+                                <action selector="favoritesBarButtonAction:" destination="mJw-kT-DgG" id="L0g-7e-d9d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="DetailsTableViewOutlet" destination="01a-as-SaS" id="xZ5-kY-2I8"/>
                         <outlet property="MovieDetailsTableViewOutlet" destination="01a-as-SaS" id="xY3-XG-y0k"/>
                         <outlet property="favoritesBarButtonItem" destination="Fbb-UT-pVX" id="AaW-OZ-sAR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IM1-ax-47J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="612"/>
+            <point key="canvasLocation" x="1566" y="618"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4hn-tI-P6o">

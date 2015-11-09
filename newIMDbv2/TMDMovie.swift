@@ -10,9 +10,10 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
-class TMDMovie : Mappable {
+@objc class TMDMovie : NSObject, Mappable {
     
     var id: Int?
+    var movieId: Int = 0
     var title : String?
     var originalTitle : String?
     var imagePath : String?
@@ -31,7 +32,8 @@ class TMDMovie : Mappable {
     }
     
     init(fromObject object: TMDRLMMovies) {
-        self.id = object.id
+        self.id = object.movieId
+        self.movieId = object.movieId
         self.title = object.title
         self.originalTitle = object.originalTitle
         self.imagePath = object.imagePath
@@ -47,6 +49,7 @@ class TMDMovie : Mappable {
     
     func mapping(map: Map) {
         self.id <- map["id"]
+        self.movieId <- map["id"]
         self.title <- map["title"]
         self.originalTitle <- map["original_title"]
         self.imagePath <- map["poster_path"]

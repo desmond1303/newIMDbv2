@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class TMDRLMMovies: Object {
-    dynamic var id = 0
+    dynamic var movieId = 0
     dynamic var title : String = ""
     dynamic var originalTitle : String = ""
     dynamic var imagePath : String = ""
@@ -23,7 +23,7 @@ class TMDRLMMovies: Object {
     dynamic var voteCount : Int = 0
     
     override static func primaryKey() -> String? {
-        return "id"
+        return "movieId"
     }
     
 }

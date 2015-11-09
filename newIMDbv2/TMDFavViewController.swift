@@ -134,7 +134,7 @@ class TMDFavViewController: UIViewController, UICollectionViewDataSource, UIColl
         let sender = sender as! TMDFavCell
         
         if segue.identifier == "showMovieDetails" {
-            let detailsViewController = segue.destinationViewController as! TMDMovieDetailsViewController
+            let detailsViewController = segue.destinationViewController as! TMDDetailsTableViewController
             let indexPath: NSIndexPath = self.TMDFavCollectionOutlet.indexPathForCell(sender)!
             
             detailsViewController.movie = self.movies![indexPath.item]

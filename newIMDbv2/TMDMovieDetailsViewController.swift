@@ -35,7 +35,7 @@ class TMDMovieDetailsViewController: UITableViewController {
         }
         else {
             let favoriteMovie = TMDRLMMovies()
-            favoriteMovie.id = self.movie!.id!
+            favoriteMovie.movieId = self.movie!.id!
             favoriteMovie.title = self.movie!.title!
             
             favoriteMovie.originalTitle = self.movie!.originalTitle!
