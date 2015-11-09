@@ -14,6 +14,7 @@
 
 @class TMDMovie;
 @class TMDMovieReview;
+@class AlamofireWrapper;
 
 @interface TMDDetailsTableViewController : UITableViewController
 

@@ -75,31 +75,11 @@ bool isFav = NO;
     NSString *url = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%ld/reviews", (long)_movie.movieId];
     NSDictionary *urlParameters = @{@"api_key":@"d94cca56f8edbdf236c0ccbacad95aa1"};
     
+    
+    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters];
+    NSMutableArray *response = [aWrapper getResponse];
+    
 
-    Alam
-    
-    Alamofirew
-    .request(.GET, url, parameters: urlParamteres)
-    .responseArray("results") { (response:[TMDMovieReview]?, error: ErrorType?) in
-        if let allReviews = response {
-            self.reviews = allReviews
-        }
-        else {
-            self.noReviews = true
-        }
-        self.MovieDetailsTableViewOutlet.reloadData()
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
 
