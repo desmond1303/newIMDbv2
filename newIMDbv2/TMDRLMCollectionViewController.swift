@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Realm
 import RealmSwift
 
 private let reuseIdentifier = "RLMfavoriteMovieTile"
@@ -21,10 +22,10 @@ class TMDRLMCollectionViewController: UICollectionViewController {
     let realm = try! Realm()
     
     func getRealmMovies() {
-        let RLMFavs = realm.objects(TMDRLMMovies)
+        let RLMFavs = TMDRLMMovies.allObjects()
         self.favoriteMovies.removeAll()
-        for fav in RLMFavs {
-            self.favoriteMovies.append(TMDMovie(fromObject: fav))
+        for var i in 0..<RLMFavs.count {
+            self.favoriteMovies.append(TMDMovie(fromObject: RLMFavs[UInt(i++)] as! TMDRLMMovies))
             self.collectionViewOutlet.reloadData()
         }
     }

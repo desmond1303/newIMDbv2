@@ -31,11 +31,11 @@ bool isFav = NO;
     if (isFav) {
         
         
-        //RLMResults *movie = [TMDRLMMovies allObjects];
+        RLMResults *resultMovie = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
         
-        //[_realm beginWriteTransaction];
-        //[_realm deleteObject:movie];
-        //[_realm commitWriteTransaction];
+        [_realm beginWriteTransaction];
+        [_realm deleteObject:resultMovie[0]];
+        [_realm commitWriteTransaction];
          
         
         
@@ -79,6 +79,15 @@ bool isFav = NO;
     AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters];
     //NSMutableArray *response = [aWrapper getResponse];
     
+    RLMResults *movieThatExists = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
+    
+    if (movieThatExists.count != 0) {
+        [self favoritesBarButtonItem].image = [UIImage imageNamed: @"FavSelected"];
+        isFav = YES;
+    } else {
+        [self favoritesBarButtonItem ].image = [UIImage imageNamed: @"FavNotSelected"];
+        isFav = NO;
+    }
 
     
 }
@@ -132,7 +141,7 @@ bool isFav = NO;
         else {
             TMDDetailsDescriptionTableViewCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsHeader" forIndexPath:indexPath];
             
-            [cell movieDescriptionTextbox].text = _movie.movieDescription;
+            //[cell movieDescriptionTextbox].text = _movie.movieDescription;
             
             return cell;
         }

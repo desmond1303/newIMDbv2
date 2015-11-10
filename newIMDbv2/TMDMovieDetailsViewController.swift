@@ -5,7 +5,7 @@
 //  Created by Dino Prašo on 23/10/15.
 //  Copyright © 2015 Atlantbh. All rights reserved.
 //
-
+/*
 import UIKit
 import Alamofire
 import SDWebImage
@@ -184,3 +184,4 @@ class TMDMovieDetailsViewController: UITableViewController {
     */
 
 }
+*/
