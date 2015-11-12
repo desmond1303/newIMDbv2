@@ -18,6 +18,8 @@
 
 @interface TMDDetailsTableViewController : UITableViewController
 
+@property (strong, nonatomic) IBOutlet UITableView *DetailsTableViewOutlet;
+@property (strong, nonatomic) NSArray<TMDMovieReview *> *reviews;
 @property (strong, nonatomic) TMDMovie *movie;
 
 @end

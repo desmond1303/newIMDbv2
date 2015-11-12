@@ -13,14 +13,17 @@ import Alamofire
     
     var reviews = [TMDMovieReview]()
     
-    init(url: String, urlParamteres: [String:String], completed: ()->()) {
+    init(url: String, urlParamteres: [String:String], sender: TMDDetailsTableViewController) {
         super.init()
         Alamofire
             .request(.GET, url, parameters: urlParamteres)
             .responseArray("results") { (response:[TMDMovieReview]?, error: ErrorType?) in
                 if let allReviews = response {
                     self.reviews = allReviews
-                    completed()
+                    sender.reviews = allReviews
+                    sender.DetailsTableViewOutlet.reloadData()
+                    NSLog("Alamofire Finished Execution")
+                    
                 }
         }
 

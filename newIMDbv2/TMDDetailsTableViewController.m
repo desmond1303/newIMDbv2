@@ -12,11 +12,7 @@
 @interface TMDDetailsTableViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *MovieDetailsTableViewOutlet;
-
-@property (strong, nonatomic) NSArray<TMDMovieReview *> *reviews;
 @property (strong, nonatomic) RLMRealm *realm;
-
-@property (strong, nonatomic) IBOutlet UITableView *DetailsTableViewOutlet;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *favoritesBarButtonItem;
 
 @end
@@ -75,13 +71,8 @@ bool isFav = NO;
     NSDictionary *urlParameters = @{@"api_key":@"d94cca56f8edbdf236c0ccbacad95aa1"};
     
     
-    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters completed:^{
-        NSLog(@"Comleted Alamofire");
-        [[self DetailsTableViewOutlet] reloadData];
-        NSLog(@"Reloaded Data");
-    }];
-    _reviews = [aWrapper getResponse];
-    
+    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters sender: self];
+    NSLog(@"AlamofireInited");
     
     RLMResults *movieThatExists = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
     
@@ -98,7 +89,6 @@ bool isFav = NO;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self navigationItem].title = _movie.title;
 
 }
@@ -154,8 +144,8 @@ bool isFav = NO;
         if (_reviews.count > 0) {
             TMDMovieReview *currentReview = _reviews[indexPath.row];
             
-            //[cell authorLabel].text = currentReview.author;
-            //[cell reviewText].text = currentReview.content;
+            [cell authorLabel].text = currentReview.author;
+            [cell reviewText].text = currentReview.content;
             
             return cell;
         }
