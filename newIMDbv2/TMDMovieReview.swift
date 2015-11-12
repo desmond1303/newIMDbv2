@@ -28,4 +28,12 @@ class TMDMovieReview : Mappable {
         self.content <- map["content"]
     }
     
+    public func getAuthor() -> String {
+        return self.author!
+    }
+    
+    func getContent() -> String {
+        return self.content!
+    }
+    
 }

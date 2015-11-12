@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *MovieDetailsTableViewOutlet;
 
-@property (strong, nonatomic) NSMutableArray<TMDMovieReview *> *reviews;
+@property (strong, nonatomic) NSArray<TMDMovieReview *> *reviews;
 @property (strong, nonatomic) RLMRealm *realm;
 
 @property (strong, nonatomic) IBOutlet UITableView *DetailsTableViewOutlet;
@@ -55,7 +55,7 @@ bool isFav = NO;
         favoriteMovie.releaseDate = _movie.releaseDate;
         //favoriteMovie.popularity = _movie.popularity;
         //favoriteMovie.voteAvg = _movie.voteAvg;
-        //favoriteMovie.voteCount = _movie.voteCount;
+        //favoriteMovie.voteCount = movie.voteCount;
         
         [_realm beginWriteTransaction];
         [_realm addObject:favoriteMovie];
@@ -77,7 +77,10 @@ bool isFav = NO;
     
     
     AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters];
-    //NSMutableArray *response = [aWrapper getResponse];
+    _reviews = [aWrapper getResponse];
+    noReviews = aWrapper.noReviews;
+    [[self MovieDetailsTableViewOutlet] reloadData];
+    
     
     RLMResults *movieThatExists = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
     
@@ -114,7 +117,7 @@ bool isFav = NO;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(section == 0) return 2;
-    else return [_reviews count];
+    else return [_reviews count] > 0 ? [_reviews count] : 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -134,30 +137,31 @@ bool isFav = NO;
             //[cell votesProgressLabel].text = _movie.voteAvg;
             //[cell voteCountLabel].text = [NSString stringWithFormat:@"%@ votes", _movie.voteCount];
             
-            // Configure the cell...
-            
             return cell;
         }
         else {
-            TMDDetailsDescriptionTableViewCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsHeader" forIndexPath:indexPath];
+            TMDDetailsDescriptionTableViewCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsBody" forIndexPath:indexPath];
             
-            //[cell movieDescriptionTextbox].text = _movie.movieDescription;
+            [cell movieDescriptionTextbox].text = _movie.movieDescription;
             
             return cell;
         }
     }
     else {
-        TMDReviewTableCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsHeader" forIndexPath:indexPath];
+        TMDReviewTableCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieReview" forIndexPath:indexPath];
         
-        if(noReviews) {
-            [cell authorLabel].text = @"No Reviews For This Movie Yet";
+        if (_reviews.count > 0) {
+            TMDMovieReview *currentReview = _reviews[indexPath.item];
+            
+            [cell authorLabel].text = @"Test Author Name"; //[currentReview getAuthor];
+            [cell reviewText].text = @"Test Review Content"; //[currentReview getContent];
+            
             return cell;
         }
         
-        //[cell authorLabel].text = [_reviews[indexPath.row] author];
-        //[cell reviewText].text = [_reviews[indexPath.row] content];
-        
+        [cell authorLabel].text = @"No Reviews For This Movie Yet";
         return cell;
+        
     }
     
 }

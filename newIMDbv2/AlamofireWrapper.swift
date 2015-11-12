@@ -11,7 +11,7 @@ import Alamofire
 
 @objc class AlamofireWrapper: NSObject {
     
-    var reviews: [TMDMovieReview]?
+    var reviews = [TMDMovieReview]()
     var noReviews: Bool = false
     
     init(url: String, urlParamteres: [String:String]) {
@@ -29,10 +29,39 @@ import Alamofire
 
     }
     
-    /*
-    @objc func getResponse() -> NSMutableArray {
-        return NSMutableDictionary(dictionary: self.reviews!)
+    func getResponse() -> [AnyObject] {
+        return self.reviews
     }
-    */
+    
+    func getResponse(forItemAtIndexPath indexPath: Int) -> AnyObject {
+        return self.reviews[indexPath]
+    }
+    
+    func getResponse(forProperty property: String) -> [AnyObject] {
+        switch property {
+            case "id":
+                var returning = [Int]()
+                for review in self.reviews {
+                    returning.append(review.id!)
+                }
+                return returning
+            case "author":
+                var returning = [String]()
+                for review in self.reviews {
+                    returning.append(review.author!)
+                }
+                return returning
+            case "content":
+                var returning = [String]()
+                for review in self.reviews {
+                    returning.append(review.content!)
+                }
+                return returning
+            default:
+                return self.reviews
+            
+        }
+    }
+
 
 }
