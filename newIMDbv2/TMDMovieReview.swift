@@ -10,7 +10,7 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 
-class TMDMovieReview : Mappable {
+@objc class TMDMovieReview : NSObject, Mappable {
     
     var id: Int?
     var author: String? = ""

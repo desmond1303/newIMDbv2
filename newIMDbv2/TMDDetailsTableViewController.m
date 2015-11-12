@@ -142,7 +142,7 @@ bool isFav = NO;
         NSLog(@"Review: %@", _reviews);
         
         if (_reviews.count > 0) {
-            TMDMovieReview *currentReview = _reviews[indexPath.row];
+            TMDMovieReview *currentReview = [_reviews objectAtIndex:indexPath.row];
             
             [cell authorLabel].text = currentReview.author;
             [cell reviewText].text = currentReview.content;
