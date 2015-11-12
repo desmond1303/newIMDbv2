@@ -75,9 +75,12 @@ bool isFav = NO;
     NSDictionary *urlParameters = @{@"api_key":@"d94cca56f8edbdf236c0ccbacad95aa1"};
     
     
-    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters];
+    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters completed:^{
+        NSLog(@"Comleted Alamofire");
+        [[self DetailsTableViewOutlet] reloadData];
+        NSLog(@"Reloaded Data");
+    }];
     _reviews = [aWrapper getResponse];
-    [[self MovieDetailsTableViewOutlet] reloadData];
     
     
     RLMResults *movieThatExists = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
@@ -97,7 +100,6 @@ bool isFav = NO;
     [super viewDidLoad];
     
     [self navigationItem].title = _movie.title;
-   
 
 }
 
@@ -147,13 +149,13 @@ bool isFav = NO;
     else {
         TMDReviewTableCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieReview" forIndexPath:indexPath];
         
-        NSLog(@"Test");
+        NSLog(@"Review: %@", _reviews);
         
         if (_reviews.count > 0) {
             TMDMovieReview *currentReview = _reviews[indexPath.row];
             
-            [cell authorLabel].text = @"Test Author Name"; //[currentReview getAuthor];
-            [cell reviewText].text = @"Test Review Content"; //[currentReview getContent];
+            //[cell authorLabel].text = currentReview.author;
+            //[cell reviewText].text = currentReview.content;
             
             return cell;
         }

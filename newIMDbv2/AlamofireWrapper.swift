@@ -13,7 +13,7 @@ import Alamofire
     
     var reviews = [TMDMovieReview]()
     
-    init(url: String, urlParamteres: [String:String]) {
+    init(url: String, urlParamteres: [String:String], completed: ()->()) {
         super.init()
         Alamofire
             .request(.GET, url, parameters: urlParamteres)
@@ -22,6 +22,8 @@ import Alamofire
                     self.reviews = allReviews
                 }
         }
+        
+        completed()
 
     }
     

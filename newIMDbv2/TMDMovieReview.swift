@@ -13,13 +13,19 @@ import AlamofireObjectMapper
 class TMDMovieReview : Mappable {
     
     var id: Int?
-    var author : String?
-    var content : String?
+    var author: String? = ""
+    var content: String?
     
     var dateFormatter = NSDateFormatter()
     
     required init (_ map: Map) {
         
+    }
+    
+    init (id: Int, author: String, content: String) {
+        self.id = id
+        self.author = author
+        self.content = content
     }
     
     func mapping(map: Map) {
@@ -28,7 +34,7 @@ class TMDMovieReview : Mappable {
         self.content <- map["content"]
     }
     
-    public func getAuthor() -> String {
+    func getAuthor() -> String {
         return self.author!
     }
     
