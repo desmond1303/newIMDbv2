@@ -72,7 +72,6 @@ bool isFav = NO;
     
     
     AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters sender: self];
-    NSLog(@"AlamofireInited");
     
     RLMResults *movieThatExists = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
     
@@ -120,11 +119,14 @@ bool isFav = NO;
             TMDDetailsTableViewCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieDetailsHeader" forIndexPath:indexPath];
             
             [cell movieTitleLabel].text = _movie.title;
+            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+            dateFormatter.dateFormat = @"yyyy";
+            [cell movieYearLabel].text = [dateFormatter stringFromDate:[_movie getDate]];
             [[cell movieImageView] sd_setImageWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"http://image.tmdb.org/t/p/w342/%@", _movie.imagePath]]];
             
-            //[cell votesProgreessView].progress = (float)_movie.voteAvg/10;
-            //[cell votesProgressLabel].text = _movie.voteAvg;
-            //[cell voteCountLabel].text = [NSString stringWithFormat:@"%@ votes", _movie.voteCount];
+            [cell votesProgreessView].progress = [_movie.objVoteAvg doubleValue]/10;
+            [cell votesProgressLabel].text =  [NSString stringWithFormat:@"%.01f", [_movie.objVoteAvg floatValue]];
+            [cell voteCountLabel].text = [NSString stringWithFormat:@"%ld votes", _movie.objVoteCount];
             
             return cell;
         }

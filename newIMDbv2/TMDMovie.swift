@@ -25,6 +25,9 @@ import AlamofireObjectMapper
     var voteAvg : Double?
     var voteCount : Int?
     
+    var objVoteAvg: NSNumber = 0.0
+    var objVoteCount: NSInteger = 0
+    
     var dateFormatter = NSDateFormatter()
     
     required init (_ map: Map) {
@@ -44,6 +47,9 @@ import AlamofireObjectMapper
         // runtime
         self.voteAvg = object.voteAvg
         self.voteCount = object.voteCount
+        
+        self.objVoteAvg = object.voteAvg
+        self.objVoteCount = object.voteCount
 
     }
     
@@ -60,6 +66,9 @@ import AlamofireObjectMapper
         self.runtime <- map["runtime"]
         self.voteAvg <- map["vote_average"]
         self.voteCount <- map["vote_count"]
+        
+        self.objVoteAvg <- map["vote_average"]
+        self.objVoteCount <- map["vote_count"]
     }
     
     func getDate() -> NSDate {
