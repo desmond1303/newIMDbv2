@@ -91,7 +91,6 @@ bool isFav = NO;
         [self favoritesBarButtonItem ].image = [UIImage imageNamed: @"FavNotSelected"];
         isFav = NO;
     }
-
     
 }
 
@@ -150,8 +149,10 @@ bool isFav = NO;
     else {
         TMDReviewTableCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieReview" forIndexPath:indexPath];
         
+        NSLog(@"Test");
+        
         if (_reviews.count > 0) {
-            TMDMovieReview *currentReview = _reviews[indexPath.item];
+            TMDMovieReview *currentReview = _reviews[indexPath.row];
             
             [cell authorLabel].text = @"Test Author Name"; //[currentReview getAuthor];
             [cell reviewText].text = @"Test Review Content"; //[currentReview getContent];
