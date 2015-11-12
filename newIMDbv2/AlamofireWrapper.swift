@@ -20,10 +20,9 @@ import Alamofire
             .responseArray("results") { (response:[TMDMovieReview]?, error: ErrorType?) in
                 if let allReviews = response {
                     self.reviews = allReviews
+                    completed()
                 }
         }
-        
-        completed()
 
     }
     
