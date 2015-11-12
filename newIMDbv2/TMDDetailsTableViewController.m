@@ -23,7 +23,6 @@
 
 @implementation TMDDetailsTableViewController
 
-bool noReviews = NO;
 bool isFav = NO;
 
 - (IBAction)favoritesBarButtonAction:(id)sender {
@@ -78,7 +77,6 @@ bool isFav = NO;
     
     AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters];
     _reviews = [aWrapper getResponse];
-    noReviews = aWrapper.noReviews;
     [[self MovieDetailsTableViewOutlet] reloadData];
     
     

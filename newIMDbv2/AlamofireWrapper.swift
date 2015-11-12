@@ -12,7 +12,6 @@ import Alamofire
 @objc class AlamofireWrapper: NSObject {
     
     var reviews = [TMDMovieReview]()
-    var noReviews: Bool = false
     
     init(url: String, urlParamteres: [String:String]) {
         super.init()
@@ -21,9 +20,6 @@ import Alamofire
             .responseArray("results") { (response:[TMDMovieReview]?, error: ErrorType?) in
                 if let allReviews = response {
                     self.reviews = allReviews
-                }
-                else {
-                    self.noReviews = true
                 }
         }
 
