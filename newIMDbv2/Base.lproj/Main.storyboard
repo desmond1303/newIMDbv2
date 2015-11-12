@@ -322,6 +322,7 @@
                                 <connections>
                                     <outlet property="authorLabel" destination="Lxx-en-lV2" id="17Q-8c-Mvp"/>
                                     <outlet property="reviewText" destination="AXQ-P9-LGJ" id="BnW-rQ-4Mq"/>
+                                    <segue destination="mmK-Ab-4vw" kind="show" identifier="reviewReadMore" id="HFx-yx-Fqn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -347,6 +348,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IM1-ax-47J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566" y="618"/>
+        </scene>
+        <!--Full Review View Controller-->
+        <scene sceneID="W8X-fe-DrO">
+            <objects>
+                <viewController id="mmK-Ab-4vw" customClass="TMDFullReviewViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5XB-er-BQH"/>
+                        <viewControllerLayoutGuide type="bottom" id="fJq-Sb-oQ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fpN-fc-XdK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zm6-vI-Mn1">
+                                <rect key="frame" x="20" y="72" width="560" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m2c-E4-KUv">
+                                <rect key="frame" x="20" y="101" width="560" height="442"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fJq-Sb-oQ3" firstAttribute="top" secondItem="m2c-E4-KUv" secondAttribute="bottom" constant="8" id="6d2-dh-h1j"/>
+                            <constraint firstItem="m2c-E4-KUv" firstAttribute="leading" secondItem="fpN-fc-XdK" secondAttribute="leading" constant="20" id="9Fu-eZ-tkL"/>
+                            <constraint firstAttribute="trailing" secondItem="m2c-E4-KUv" secondAttribute="trailing" constant="20" id="CWt-t6-Dr4"/>
+                            <constraint firstItem="zm6-vI-Mn1" firstAttribute="top" secondItem="5XB-er-BQH" secondAttribute="bottom" constant="8" id="KfV-xx-sBz"/>
+                            <constraint firstItem="zm6-vI-Mn1" firstAttribute="leading" secondItem="fpN-fc-XdK" secondAttribute="leading" constant="20" id="RXz-Qj-piV"/>
+                            <constraint firstItem="m2c-E4-KUv" firstAttribute="top" secondItem="zm6-vI-Mn1" secondAttribute="bottom" constant="8" id="pqN-4j-3Tu"/>
+                            <constraint firstAttribute="trailing" secondItem="zm6-vI-Mn1" secondAttribute="trailing" constant="20" id="yqR-c3-u5L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="zm6-vI-Mn1" id="x2z-1J-mc2"/>
+                        <outlet property="reviewTextField" destination="m2c-E4-KUv" id="OJd-1K-7da"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="He3-si-C8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2292" y="618"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4hn-tI-P6o">
