@@ -103,9 +103,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="heightClass=regular" misplaced="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                                 </variation>
@@ -661,6 +658,6 @@
         <image name="FavNotSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hyi-9h-5Vl"/>
+        <segue reference="yq6-SC-orO"/>
     </inferredMetricsTieBreakers>
 </document>
