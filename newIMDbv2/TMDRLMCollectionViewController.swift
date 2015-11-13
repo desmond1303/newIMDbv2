@@ -16,13 +16,60 @@ private let reuseIdentifier = "RLMfavoriteMovieTile"
 class TMDRLMCollectionViewController: UICollectionViewController {
     
     var displayColumns: CGFloat = 2
+    var sortBy: String = "title"
+    var sortAscending: Bool = true
+    
+    @IBAction func filterBarButtonAction(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Choose a filter", message: nil, preferredStyle: .ActionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        
+        let TitleFilterAction = UIAlertAction(title: "Title", style: .Default) { (action) in
+            self.sortBy = "title"
+            self.viewWillAppear(true)
+        }
+        alertController.addAction(TitleFilterAction)
+        
+        let ReleaseDateFilterAction = UIAlertAction(title: "Release Date", style: .Default) { (action) in
+            self.sortBy = "releaseDate"
+            self.viewWillAppear(true)
+        }
+        alertController.addAction(ReleaseDateFilterAction)
+        
+        let PopularityFilterAction = UIAlertAction(title: "Popularity", style: .Default) { (action) in
+            self.sortBy = "popularity"
+            self.viewWillAppear(true)
+        }
+        alertController.addAction(PopularityFilterAction)
+        
+        let SwitchFilterAction = UIAlertAction(title: "Switch Asc/Desc", style: .Default) { (action) in
+            if self.sortAscending == true {
+                self.sortAscending = false
+            }
+            else {
+                self.sortAscending = true
+            }
+            self.viewWillAppear(true)
+        }
+        alertController.addAction(SwitchFilterAction)
+        
+        self.presentViewController(alertController, animated: true) {
+            // ...
+        }
+
+    }
+    
 
     @IBOutlet var collectionViewOutlet: UICollectionView!
     var favoriteMovies = [TMDMovie]()
     let realm = try! Realm()
     
     func getRealmMovies() {
-        let RLMFavs = TMDRLMMovies.allObjects()
+        let RLMFavs = TMDRLMMovies.allObjects().sortedResultsUsingProperty(self.sortBy, ascending: self.sortAscending)
         self.favoriteMovies.removeAll()
         for var i in 0..<RLMFavs.count {
             self.favoriteMovies.append(TMDMovie(fromObject: RLMFavs[UInt(i++)] as! TMDRLMMovies))
@@ -39,7 +86,7 @@ class TMDRLMCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "RLM Favorites"
+        self.navigationItem.title = "Favorites"
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
