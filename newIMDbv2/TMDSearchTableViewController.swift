@@ -112,7 +112,6 @@ class TMDSearchTableViewController: UITableViewController, UISearchResultsUpdati
         return true
     }
     */
-
     
     // MARK: - Navigation
 

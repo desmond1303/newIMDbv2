@@ -483,7 +483,7 @@
             </objects>
             <point key="canvasLocation" x="82" y="276"/>
         </scene>
-        <!--Search Table View Controller-->
+        <!--Search-->
         <scene sceneID="hMP-ar-ygg">
             <objects>
                 <tableViewController id="fpT-mD-eIS" customClass="TMDSearchTableViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
@@ -530,7 +530,7 @@
                             <outlet property="delegate" destination="fpT-mD-eIS" id="B4q-Y6-lzn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="q23-1P-Fuh"/>
+                    <navigationItem key="navigationItem" title="Search" id="q23-1P-Fuh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DAJ-CH-CGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
