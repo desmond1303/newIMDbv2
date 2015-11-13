@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class TMDSearchTableViewController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate {
+class TMDSearchTableViewController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
 
     let searchController = UISearchController(searchResultsController: nil)
     var searchResults = [TMDMovie]()
@@ -18,6 +18,7 @@ class TMDSearchTableViewController: UITableViewController, UISearchResultsUpdati
         super.viewDidLoad()
         
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
@@ -45,6 +46,12 @@ class TMDSearchTableViewController: UITableViewController, UISearchResultsUpdati
                 self.tableView.reloadData()
         }
 
+    }
+
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.searchResults = []
+        self.searchController.active = false
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
