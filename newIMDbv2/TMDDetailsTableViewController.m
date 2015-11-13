@@ -48,7 +48,7 @@ bool isFav = NO;
         //favoriteMovie.genres = _movie.genres;
         favoriteMovie.movieDescription = _movie.movieDescription;
         favoriteMovie.releaseDate = _movie.releaseDate;
-        // bfavoriteMovie.objPopularity = _movie.popularity;
+        //favoriteMovie.objPopularity = _movie.popularity;
         favoriteMovie.objVoteAvg = _movie.objVoteAvg;
         favoriteMovie.objVoteCount = _movie.objVoteCount;
         

@@ -48,8 +48,8 @@ import AlamofireObjectMapper
         self.voteAvg = object.voteAvg
         self.voteCount = object.voteCount
         
-        self.objVoteAvg = object.voteAvg
-        self.objVoteCount = object.voteCount
+        self.objVoteAvg = object.objVoteAvg
+        self.objVoteCount = object.objVoteCount
 
     }
     

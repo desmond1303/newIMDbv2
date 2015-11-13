@@ -11,7 +11,7 @@ import Realm
 import RealmSwift
 
 @objc class TMDRLMMovies: RLMObject {
-    dynamic var movieId = 0
+    dynamic var movieId: Int = 0
     dynamic var title : String = ""
     dynamic var originalTitle : String = ""
     dynamic var imagePath : String = ""
