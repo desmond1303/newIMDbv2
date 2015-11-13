@@ -23,6 +23,10 @@ import RealmSwift
     dynamic var voteAvg : Double = 0
     dynamic var voteCount : Int = 0
     
+    dynamic var objPopularity: NSNumber = 0
+    dynamic var objVoteAvg: NSNumber = 0
+    dynamic var objVoteCount: NSInteger = 0
+    
     override static func primaryKey() -> String? {
         return "movieId"
     }
