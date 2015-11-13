@@ -73,7 +73,12 @@ import AlamofireObjectMapper
     
     func getDate() -> NSDate {
         self.dateFormatter.dateFormat = "yyyy-mm-dd"
-        return self.dateFormatter.dateFromString(self.releaseDate!)!
+        if let releaseDate = self.releaseDate {
+            return self.dateFormatter.dateFromString(releaseDate)!
+        }
+        else {
+            return self.dateFormatter.dateFromString("0000-00-00")!
+        }
     }
     
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D10F5581BF4BFD9008CE46A /* TMDSearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10F5571BF4BFD9008CE46A /* TMDSearchResultsController.swift */; };
+		7D1592751BF5D7DB002CD366 /* TMDSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1592741BF5D7DB002CD366 /* TMDSearchTableViewController.swift */; };
 		7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */; };
 		7D72837C1BD8C4B300AE1030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */; };
 		7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */; };
@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		66278C3DB3D18314B7AB5942 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		71989E7BA1822AA0687611B4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D10F5571BF4BFD9008CE46A /* TMDSearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDSearchResultsController.swift; sourceTree = "<group>"; };
+		7D1592741BF5D7DB002CD366 /* TMDSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDSearchTableViewController.swift; sourceTree = "<group>"; };
 		7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDCustomLayout.swift; sourceTree = "<group>"; };
 		7D7283781BD8C4B300AE1030 /* newIMDbv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newIMDbv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +154,8 @@
 				7D72837D1BD8C4B300AE1030 /* TMDFavViewController.swift */,
 				7DEE88E81BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift */,
 				7D8AE3511BEB5F7F00257AF9 /* TMDRLMCollectionViewController.swift */,
+				7DC3B37E1BF4B16200C5CB0A /* TMDFullReviewViewController.swift */,
+				7D1592741BF5D7DB002CD366 /* TMDSearchTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -166,8 +168,6 @@
 				7DFBF6BB1BE3701900DD305E /* TMDDetailsTableViewCell.swift */,
 				7DD546771BE761B20047E3AE /* TMDReviewTableCell.swift */,
 				7DFBF6BD1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift */,
-				7DC3B37E1BF4B16200C5CB0A /* TMDFullReviewViewController.swift */,
-				7D10F5571BF4BFD9008CE46A /* TMDSearchResultsController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -308,12 +308,12 @@
 				7DFBF6BE1BE3736400DD305E /* TMDDetailsDescriptionTableViewCell.swift in Sources */,
 				7DD546781BE761B20047E3AE /* TMDReviewTableCell.swift in Sources */,
 				7D7283991BD8D70000AE1030 /* TMDMovie.swift in Sources */,
+				7D1592751BF5D7DB002CD366 /* TMDSearchTableViewController.swift in Sources */,
 				7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */,
 				7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */,
 				7D7283901BD8CA7A00AE1030 /* TMDFavCell.swift in Sources */,
 				7DAD7E4C1BE8B5A4006972E0 /* TMDDetailsTableViewController.m in Sources */,
 				7D7283921BD8CB5900AE1030 /* TMDMovieTileImageView.swift in Sources */,
-				7D10F5581BF4BFD9008CE46A /* TMDSearchResultsController.swift in Sources */,
 				7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */,
 				7DD047801BF0A5E9006FB10A /* AlamofireWrapper.swift in Sources */,
 				7DFBF6BC1BE3701900DD305E /* TMDDetailsTableViewCell.swift in Sources */,

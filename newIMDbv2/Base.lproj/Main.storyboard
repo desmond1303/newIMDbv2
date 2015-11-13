@@ -476,63 +476,63 @@
                         <animations/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3e6-KA-G6v" kind="relationship" relationship="rootViewController" id="0Xt-96-Ma4"/>
+                        <segue destination="fpT-mD-eIS" kind="relationship" relationship="rootViewController" id="AR9-xd-3Y2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n1H-vn-xYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82" y="276"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="RrV-YJ-BJG">
+        <!--Search Table View Controller-->
+        <scene sceneID="hMP-ar-ygg">
             <objects>
-                <tableViewController id="3e6-KA-G6v" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="SdI-pD-IeP">
+                <tableViewController id="fpT-mD-eIS" customClass="TMDSearchTableViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lmQ-o1-5QX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="5N8-nC-yrs">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <animations/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="3e6-KA-G6v" id="hZb-Xi-Kne"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m8i-r8-DWa">
-                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="searchResultCell" textLabel="6Qi-bH-kTg" detailTextLabel="rgI-Xz-utr" style="IBUITableViewCellStyleSubtitle" id="Bd7-4e-ULH">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m8i-r8-DWa" id="P2k-0j-bOw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bd7-4e-ULH" id="42A-5S-wkW">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Qi-bH-kTg">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rgI-Xz-utr">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="mJw-kT-DgG" kind="show" identifier="showDetails" id="Hyi-9h-5Vl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="3e6-KA-G6v" id="JnC-6L-iYQ"/>
-                            <outlet property="delegate" destination="3e6-KA-G6v" id="faW-c1-y9i"/>
+                            <outlet property="dataSource" destination="fpT-mD-eIS" id="wdz-3X-DUA"/>
+                            <outlet property="delegate" destination="fpT-mD-eIS" id="B4q-Y6-lzn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ll6-yy-9qZ"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="3Bu-Eh-d7n" id="eI2-tG-ZBm"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="q23-1P-Fuh"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0On-Ga-eTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="3Bu-Eh-d7n">
-                    <connections>
-                        <outlet property="delegate" destination="3e6-KA-G6v" id="7eG-6r-6AA"/>
-                        <outlet property="searchBar" destination="5N8-nC-yrs" id="xIx-lN-lsW"/>
-                        <outlet property="searchContentsController" destination="3e6-KA-G6v" id="wGt-te-hcq"/>
-                        <outlet property="searchResultsDataSource" destination="3e6-KA-G6v" id="mFH-4w-4PQ"/>
-                        <outlet property="searchResultsDelegate" destination="3e6-KA-G6v" id="Avp-yq-Idb"/>
-                    </connections>
-                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAJ-CH-CGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82" y="983"/>
         </scene>
@@ -651,6 +651,6 @@
         <image name="FavNotSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xYX-FL-d0X"/>
+        <segue reference="Hyi-9h-5Vl"/>
     </inferredMetricsTieBreakers>
 </document>
