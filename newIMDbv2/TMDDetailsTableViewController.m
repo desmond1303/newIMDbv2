@@ -210,8 +210,8 @@ bool isFav = NO;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(TMDReviewTableCell*)sender {
     if ([segue.identifier isEqual: @"reviewReadMore"]) {
         TMDFullReviewViewController *destinationViewController = [segue destinationViewController];
-        destinationViewController.authorLabel.text = sender.authorLabel.text;
-        destinationViewController.reviewTextField.text = sender.reviewText.text;
+        destinationViewController.author = [sender authorLabel].text;
+        destinationViewController.reviewText = [sender reviewText].text;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

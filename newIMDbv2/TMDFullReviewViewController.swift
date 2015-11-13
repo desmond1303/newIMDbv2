@@ -9,12 +9,19 @@
 import UIKit
 
 class TMDFullReviewViewController: UIViewController {
+    
+    var author: String?
+    var reviewText: String?
 
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var reviewTextField: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.authorLabel.text = self.author
+        self.reviewTextField.text = self.reviewText
+        
+        
         // Do any additional setup after loading the view.
     }
 
