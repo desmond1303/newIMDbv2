@@ -639,7 +639,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="mIQ-0b-Mue">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="I5F-JQ-OHq">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="I5F-JQ-OHq">
                             <connections>
                                 <action selector="filterBarButtonAction:" destination="U8a-Ju-Oxj" id="ysA-ce-W3q"/>
                             </connections>
@@ -658,6 +658,6 @@
         <image name="FavNotSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yq6-SC-orO"/>
+        <segue reference="xYX-FL-d0X"/>
     </inferredMetricsTieBreakers>
 </document>
