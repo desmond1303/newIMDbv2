@@ -81,6 +81,13 @@ class TMDRLMCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         self.getRealmMovies()
         self.collectionViewOutlet.reloadData()
+        
+        if UIApplication.sharedApplication().statusBarOrientation.isPortrait {
+            self.displayColumns = 2
+        }
+        else {
+            self.displayColumns = 4
+        }
     }
     
     override func viewDidLoad() {
