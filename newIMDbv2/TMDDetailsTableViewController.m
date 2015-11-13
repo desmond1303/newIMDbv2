@@ -140,8 +140,6 @@ bool isFav = NO;
     else {
         TMDReviewTableCell *cell = [_MovieDetailsTableViewOutlet dequeueReusableCellWithIdentifier:@"movieReview" forIndexPath:indexPath];
         
-        NSLog(@"Review: %@", _reviews);
-        
         if (_reviews.count > 0) {
             TMDMovieReview *currentReview = [_reviews objectAtIndex:indexPath.row];
             
