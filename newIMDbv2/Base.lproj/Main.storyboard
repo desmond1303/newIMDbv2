@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Fav View Controller-->
+        <!--Feed Collection View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TMDFavViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Feed Collection View Controller" id="BYZ-38-t0r" customClass="TMDFavViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="-1344" y="983"/>
         </scene>
-        <!--Title-->
+        <!--Movie Details Table View Controller-->
         <scene sceneID="e7b-Nq-Eiq">
             <objects>
-                <tableViewController id="mJw-kT-DgG" customClass="TMDDetailsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Movie Details Table View Controller" id="mJw-kT-DgG" customClass="TMDDetailsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="240" sectionHeaderHeight="18" sectionFooterHeight="18" id="01a-as-SaS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -349,7 +349,7 @@
         <!--Full Review View Controller-->
         <scene sceneID="W8X-fe-DrO">
             <objects>
-                <viewController id="mmK-Ab-4vw" customClass="TMDFullReviewViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Full Review View Controller" id="mmK-Ab-4vw" customClass="TMDFullReviewViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5XB-er-BQH"/>
                         <viewControllerLayoutGuide type="bottom" id="fJq-Sb-oQ3"/>
@@ -421,10 +421,10 @@
             </objects>
             <point key="canvasLocation" x="-702" y="-505"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Feed Nav Controller-->
         <scene sceneID="9C2-jE-OMv">
             <objects>
-                <navigationController id="pRD-53-rYc" sceneMemberID="viewController">
+                <navigationController title="Feed Nav Controller" id="pRD-53-rYc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="6QL-P7-KCN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="npR-Me-jT6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -444,10 +444,10 @@
             </objects>
             <point key="canvasLocation" x="-1344" y="276"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favorites Nav Controller-->
         <scene sceneID="AvI-ji-TBZ">
             <objects>
-                <navigationController id="qeM-z4-RRj" sceneMemberID="viewController">
+                <navigationController title="Favorites Nav Controller" id="qeM-z4-RRj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="qVb-Zf-0vy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="GFi-N6-yXM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -464,10 +464,10 @@
             </objects>
             <point key="canvasLocation" x="-702" y="276"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search Nav Controller-->
         <scene sceneID="CRs-na-NMc">
             <objects>
-                <navigationController id="tsh-7f-hGr" sceneMemberID="viewController">
+                <navigationController title="Search Nav Controller" id="tsh-7f-hGr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="NN4-M3-p9x"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0aa-pN-8sG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -484,10 +484,10 @@
             </objects>
             <point key="canvasLocation" x="-64" y="276"/>
         </scene>
-        <!--Search-->
+        <!--Search Table View Controller-->
         <scene sceneID="hMP-ar-ygg">
             <objects>
-                <tableViewController id="fpT-mD-eIS" customClass="TMDSearchTableViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Search Table View Controller" id="fpT-mD-eIS" customClass="TMDSearchTableViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lmQ-o1-5QX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -537,10 +537,10 @@
             </objects>
             <point key="canvasLocation" x="-64" y="983"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Favorites Collection View Controller-->
         <scene sceneID="DhL-2e-l7X">
             <objects>
-                <collectionViewController id="U8a-Ju-Oxj" customClass="TMDRLMCollectionViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Favorites Collection View Controller" id="U8a-Ju-Oxj" customClass="TMDRLMCollectionViewController" customModule="newIMDbv2" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="oEW-FV-lRe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
