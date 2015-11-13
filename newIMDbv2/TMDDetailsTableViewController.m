@@ -72,6 +72,8 @@ bool isFav = NO;
     
     
     AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters sender: self];
+    #pragma unused (aWrapper)
+
     
     RLMResults *movieThatExists = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
     

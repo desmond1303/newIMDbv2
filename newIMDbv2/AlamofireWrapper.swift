@@ -19,11 +19,9 @@ import Alamofire
                 if let allReviews = response {
                     sender.reviews = allReviews
                     sender.DetailsTableViewOutlet.reloadData()
-                    
                 }
         }
 
     }
-
 
 }
