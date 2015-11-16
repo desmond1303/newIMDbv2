@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D079D9B1BF9EAFA00FB1314 /* TMDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D079D9A1BF9EAF900FB1314 /* TMDAlertView.m */; };
+		7D079D9D1BF9F54700FB1314 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D079D9C1BF9F54700FB1314 /* AlertView.xib */; };
 		7D1592751BF5D7DB002CD366 /* TMDSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1592741BF5D7DB002CD366 /* TMDSearchTableViewController.swift */; };
 		7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */; };
 		7D72837C1BD8C4B300AE1030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D72837B1BD8C4B300AE1030 /* AppDelegate.swift */; };
@@ -34,6 +36,9 @@
 /* Begin PBXFileReference section */
 		66278C3DB3D18314B7AB5942 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		71989E7BA1822AA0687611B4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D079D991BF9EAF900FB1314 /* TMDAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDAlertView.h; sourceTree = "<group>"; };
+		7D079D9A1BF9EAF900FB1314 /* TMDAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDAlertView.m; sourceTree = "<group>"; };
+		7D079D9C1BF9F54700FB1314 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		7D1592741BF5D7DB002CD366 /* TMDSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDSearchTableViewController.swift; sourceTree = "<group>"; };
 		7D42ACEB1BDF9F1000E5DD85 /* TMDCustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDCustomLayout.swift; sourceTree = "<group>"; };
 		7D7283781BD8C4B300AE1030 /* newIMDbv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newIMDbv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +148,9 @@
 				7DAD7E4A1BE8B5A4006972E0 /* TMDDetailsTableViewController.h */,
 				7DAD7E4B1BE8B5A4006972E0 /* TMDDetailsTableViewController.m */,
 				7DAD7E4D1BE8B6A5006972E0 /* newIMDbv2-Bridging-Header.h */,
+				7D079D991BF9EAF900FB1314 /* TMDAlertView.h */,
+				7D079D9A1BF9EAF900FB1314 /* TMDAlertView.m */,
+				7D079D9C1BF9F54700FB1314 /* AlertView.xib */,
 			);
 			name = ObjectiveC;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 			files = (
 				7D7283861BD8C4B300AE1030 /* LaunchScreen.storyboard in Resources */,
 				7D7283831BD8C4B300AE1030 /* Assets.xcassets in Resources */,
+				7D079D9D1BF9F54700FB1314 /* AlertView.xib in Resources */,
 				7D7283961BD8D60400AE1030 /* Podfile in Resources */,
 				7D7283811BD8C4B300AE1030 /* Main.storyboard in Resources */,
 			);
@@ -312,6 +321,7 @@
 				7D72837E1BD8C4B300AE1030 /* TMDFavViewController.swift in Sources */,
 				7D42ACEC1BDF9F1000E5DD85 /* TMDCustomLayout.swift in Sources */,
 				7D7283901BD8CA7A00AE1030 /* TMDFavCell.swift in Sources */,
+				7D079D9B1BF9EAFA00FB1314 /* TMDAlertView.m in Sources */,
 				7DAD7E4C1BE8B5A4006972E0 /* TMDDetailsTableViewController.m in Sources */,
 				7D7283921BD8CB5900AE1030 /* TMDMovieTileImageView.swift in Sources */,
 				7DEE88E91BDA2A9E00F34DB7 /* TMDMovieDetailsViewController.swift in Sources */,

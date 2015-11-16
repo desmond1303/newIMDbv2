@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TMDAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xs-y1-zwd">
+                    <rect key="frame" x="225" y="225" width="150" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flb-o4-hN0">
+                            <rect key="frame" x="54" y="121" width="42" height="21"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-DL-gpu">
+                            <rect key="frame" x="54" y="64" width="42" height="21"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.83011744970000001" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="Wbe-DL-gpu" firstAttribute="top" secondItem="7xs-y1-zwd" secondAttribute="top" constant="64" id="0qh-fc-bia"/>
+                        <constraint firstAttribute="bottom" secondItem="Flb-o4-hN0" secondAttribute="bottom" constant="8" id="FBm-9F-PP5"/>
+                        <constraint firstItem="Flb-o4-hN0" firstAttribute="top" secondItem="Wbe-DL-gpu" secondAttribute="bottom" constant="36" id="FQW-4N-mke"/>
+                        <constraint firstAttribute="trailing" secondItem="Wbe-DL-gpu" secondAttribute="trailing" constant="54" id="OBG-VS-8tu"/>
+                        <constraint firstItem="Wbe-DL-gpu" firstAttribute="leading" secondItem="7xs-y1-zwd" secondAttribute="leading" constant="54" id="Vlk-Xu-Zb7"/>
+                        <constraint firstAttribute="trailing" secondItem="Flb-o4-hN0" secondAttribute="trailing" constant="54" id="coh-u3-z9e"/>
+                        <constraint firstItem="Flb-o4-hN0" firstAttribute="leading" secondItem="7xs-y1-zwd" secondAttribute="leading" constant="54" id="nzs-sC-PhN"/>
+                        <constraint firstItem="Flb-o4-hN0" firstAttribute="top" secondItem="Wbe-DL-gpu" secondAttribute="bottom" constant="36" id="sKJ-7H-x2Y"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="7xs-y1-zwd" secondAttribute="trailing" constant="225" id="VJ0-oX-Hdu"/>
+                <constraint firstAttribute="bottom" secondItem="7xs-y1-zwd" secondAttribute="bottom" constant="225" id="hgP-A7-ub1"/>
+                <constraint firstItem="7xs-y1-zwd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="225" id="hgU-Px-ymY"/>
+                <constraint firstItem="7xs-y1-zwd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="225" id="r1K-lJ-m2e"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundView" destination="7xs-y1-zwd" id="GQ7-65-JvR"/>
+                <outlet property="imageLabel" destination="Wbe-DL-gpu" id="1cB-IP-Quz"/>
+                <outlet property="textLabel" destination="Flb-o4-hN0" id="1J3-EX-pw9"/>
+            </connections>
+        </view>
+    </objects>
+</document>

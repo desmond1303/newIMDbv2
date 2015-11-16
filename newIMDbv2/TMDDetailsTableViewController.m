@@ -8,6 +8,7 @@
 
 #import "TMDDetailsTableViewController.h"
 #import "newIMDbv2-Swift.h"
+#import "TMDAlertView.h"
 
 @interface TMDDetailsTableViewController ()
 
@@ -67,6 +68,11 @@ bool isFav = NO;
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    CGRect alterViewRect = CGRectMake((CGFloat)20, (CGFloat)20, (CGFloat)150, (CGFloat)150);
+    TMDAlertView *alterView = [[TMDAlertView alloc] initWithFrame:alterViewRect];
+    [alterView showAlertViewWithMessage:@"Still Loading" type:DefaultAlertType shouldRotate:YES];
+    
     NSString *url = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%ld/reviews", (long)_movie.movieId];
     NSDictionary *urlParameters = @{@"api_key":@"d94cca56f8edbdf236c0ccbacad95aa1"};
     
