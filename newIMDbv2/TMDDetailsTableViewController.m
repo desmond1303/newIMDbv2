@@ -76,7 +76,7 @@ bool isFav = NO;
     NSString *url = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%ld/reviews", (long)_movie.movieId];
     NSDictionary *urlParameters = @{@"api_key":@"d94cca56f8edbdf236c0ccbacad95aa1"};
     
-    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters sender: self completed: ^{/*[_alterView dismiss];*/}];
+    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters sender: self completed: ^{[_alterView dismiss];}];
     #pragma unused (aWrapper)
     
     RLMResults *movieThatExists = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
