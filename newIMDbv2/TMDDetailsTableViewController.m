@@ -16,6 +16,8 @@
 @property (strong, nonatomic) RLMRealm *realm;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *favoritesBarButtonItem;
 
+@property (strong, nonatomic) TMDAlertView *alterView;
+
 @end
 
 @implementation TMDDetailsTableViewController
@@ -33,8 +35,6 @@ bool isFav = NO;
         [_realm deleteObject:resultMovie[0]];
         [_realm commitWriteTransaction];
          
-        
-        
         [self favoritesBarButtonItem].image = [UIImage imageNamed:@"FavNotSelected"];
         
         isFav = NO;
@@ -70,8 +70,8 @@ bool isFav = NO;
     [super viewWillAppear:animated];
     
     CGRect alterViewRect = CGRectMake((CGFloat)20, (CGFloat)20, (CGFloat)150, (CGFloat)150);
-    TMDAlertView *alterView = [[TMDAlertView alloc] initWithFrame:alterViewRect];
-    [alterView showAlertViewWithMessage:@"Still Loading" type:DefaultAlertType shouldRotate:YES];
+    _alterView = [[TMDAlertView alloc] initWithFrame:alterViewRect];
+    [_alterView showAlertViewWithMessage:@"Still Loading" type:DefaultAlertType shouldRotate:YES];
     
     NSString *url = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%ld/reviews", (long)_movie.movieId];
     NSDictionary *urlParameters = @{@"api_key":@"d94cca56f8edbdf236c0ccbacad95aa1"};

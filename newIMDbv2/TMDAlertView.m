@@ -31,7 +31,8 @@ NSString *const AlertViewIdentifier = @"AlertView";
     _textLabel.minimumScaleFactor = 0.5;
     _textLabel.adjustsFontSizeToFitWidth = YES;
     alertType = type;
-    _imageLabel.attributedText = [[NSMutableAttributedString alloc] initWithString:self.iconCodeForAlertType attributes:[[NSDictionary alloc] initWithObjectsAndKeys:[UIFont fontWithName:@"FontAwesome" size:35],@"font", nil]];
+    _imageLabel.text = @"Test Message";
+    //_imageLabel.attributedText = [[NSMutableAttributedString alloc] initWithString:self.iconCodeForAlertType attributes:[[NSDictionary alloc] initWithObjectsAndKeys:[UIFont fontWithName:@"FontAwesome" size:35],@"font", nil]];
     _backgroundView.alpha = 0.9;
     _backgroundView.backgroundColor = self.colorForAlertType;
     if(shouldRotate){
