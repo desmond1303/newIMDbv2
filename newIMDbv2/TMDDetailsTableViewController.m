@@ -69,8 +69,7 @@ bool isFav = NO;
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    CGRect alterViewRect = CGRectMake((CGFloat)20, (CGFloat)20, (CGFloat)150, (CGFloat)150);
-    _alterView = [[TMDAlertView alloc] initWithFrame:alterViewRect];
+    _alterView = [[TMDAlertView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     [_alterView showAlertViewWithMessage:@"Still Loading" type:DefaultAlertType shouldRotate:YES];
     
     NSString *url = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%ld/reviews", (long)_movie.movieId];
