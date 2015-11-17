@@ -26,6 +26,16 @@ NSString *const AlertViewIdentifier = @"AlertView";
     return self;
 }
 
+-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    for (UIView *view in self.subviews) {
+        if (!view.hidden && view.alpha > 0 && view.userInteractionEnabled && [view pointInside:[self convertPoint:point toView:view] withEvent:event]) {
+            return YES;
+        }
+    }
+    [self dismiss];
+    return NO;
+}
+
 -(void)showAlertViewWithMessage:(NSString*)message type:(AlertType)type shouldRotate:(BOOL)shouldRotate{
     _textLabel.text = message;
     _textLabel.minimumScaleFactor = 0.5;

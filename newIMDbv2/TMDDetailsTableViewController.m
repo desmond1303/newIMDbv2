@@ -91,7 +91,6 @@ bool isFav = NO;
     
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self navigationItem].title = _movie.title;
