@@ -69,16 +69,15 @@ bool isFav = NO;
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    _alterView = [[TMDAlertView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-    [_alterView showAlertViewWithMessage:@"Still Loading" type:DefaultAlertType shouldRotate:YES];
+    //_alterView = [[TMDAlertView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    _alterView = [[[NSBundle mainBundle] loadNibNamed:AlertViewIdentifier owner:self options:nil] objectAtIndex:0];
+    [_alterView showAlertViewWithMessage:@"Loading..." type:DefaultAlertType shouldRotate:YES];
     
     NSString *url = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%ld/reviews", (long)_movie.movieId];
     NSDictionary *urlParameters = @{@"api_key":@"d94cca56f8edbdf236c0ccbacad95aa1"};
     
-    
-    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters sender: self];
+    AlamofireWrapper *aWrapper = [[AlamofireWrapper alloc] initWithUrl:url urlParamteres:urlParameters sender: self completed: ^{/*[_alterView dismiss];*/}];
     #pragma unused (aWrapper)
-
     
     RLMResults *movieThatExists = [TMDRLMMovies objectsWhere:[NSString stringWithFormat:@"movieId=%ld", _movie.movieId]];
     
@@ -96,6 +95,7 @@ bool isFav = NO;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self navigationItem].title = _movie.title;
+    
 }
 
 - (void)didReceiveMemoryWarning {

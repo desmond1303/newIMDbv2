@@ -10,51 +10,78 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xs-y1-zwd">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xs-y1-zwd">
                     <rect key="frame" x="225" y="225" width="150" height="150"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flb-o4-hN0">
-                            <rect key="frame" x="54" y="121" width="42" height="21"/>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmi-us-W1s">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UdQ-zd-3zj">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flb-o4-hN0">
+                                        <rect key="frame" x="8" y="121" width="134" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="foS-6o-KfV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loader" translatesAutoresizingMaskIntoConstraints="NO" id="338-RN-M38">
+                                        <rect key="frame" x="38" y="38" width="75" height="75"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="UuF-F6-7BA"/>
+                                            <constraint firstAttribute="width" constant="75" id="iJ8-k0-iDK"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="338-RN-M38" firstAttribute="centerY" secondItem="UdQ-zd-3zj" secondAttribute="centerY" id="1bT-Bi-cXa"/>
+                                    <constraint firstItem="Flb-o4-hN0" firstAttribute="leading" secondItem="UdQ-zd-3zj" secondAttribute="leading" constant="8" id="4cl-6q-mpS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Flb-o4-hN0" secondAttribute="bottom" constant="8" id="Rhc-Ay-2cp"/>
+                                    <constraint firstItem="338-RN-M38" firstAttribute="centerX" secondItem="UdQ-zd-3zj" secondAttribute="centerX" id="S8r-Cs-P9J"/>
+                                    <constraint firstAttribute="trailing" secondItem="Flb-o4-hN0" secondAttribute="trailing" constant="8" id="zd2-xD-ww6"/>
+                                </constraints>
+                            </view>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbe-DL-gpu">
-                            <rect key="frame" x="54" y="64" width="42" height="21"/>
-                            <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <color key="backgroundColor" red="0.0" green="0.53725490200000003" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                            <blurEffect style="light"/>
+                        </visualEffectView>
                     </subviews>
                     <animations/>
-                    <color key="backgroundColor" red="0.83011744970000001" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="Wbe-DL-gpu" firstAttribute="top" secondItem="7xs-y1-zwd" secondAttribute="top" constant="64" id="0qh-fc-bia"/>
-                        <constraint firstAttribute="bottom" secondItem="Flb-o4-hN0" secondAttribute="bottom" constant="8" id="FBm-9F-PP5"/>
-                        <constraint firstItem="Flb-o4-hN0" firstAttribute="top" secondItem="Wbe-DL-gpu" secondAttribute="bottom" constant="36" id="FQW-4N-mke"/>
-                        <constraint firstAttribute="trailing" secondItem="Wbe-DL-gpu" secondAttribute="trailing" constant="54" id="OBG-VS-8tu"/>
-                        <constraint firstItem="Wbe-DL-gpu" firstAttribute="leading" secondItem="7xs-y1-zwd" secondAttribute="leading" constant="54" id="Vlk-Xu-Zb7"/>
-                        <constraint firstAttribute="trailing" secondItem="Flb-o4-hN0" secondAttribute="trailing" constant="54" id="coh-u3-z9e"/>
-                        <constraint firstItem="Flb-o4-hN0" firstAttribute="leading" secondItem="7xs-y1-zwd" secondAttribute="leading" constant="54" id="nzs-sC-PhN"/>
-                        <constraint firstItem="Flb-o4-hN0" firstAttribute="top" secondItem="Wbe-DL-gpu" secondAttribute="bottom" constant="36" id="sKJ-7H-x2Y"/>
+                        <constraint firstAttribute="trailing" secondItem="Dmi-us-W1s" secondAttribute="trailing" id="0hC-S8-rUf"/>
+                        <constraint firstItem="Dmi-us-W1s" firstAttribute="top" secondItem="7xs-y1-zwd" secondAttribute="top" id="46K-FS-WNJ"/>
+                        <constraint firstAttribute="height" constant="150" id="GpX-xg-tVT"/>
+                        <constraint firstItem="Dmi-us-W1s" firstAttribute="leading" secondItem="7xs-y1-zwd" secondAttribute="leading" id="Rev-gS-U3h"/>
+                        <constraint firstAttribute="bottom" secondItem="Dmi-us-W1s" secondAttribute="bottom" id="axI-1q-SaJ"/>
+                        <constraint firstAttribute="width" constant="150" id="l42-tJ-TUg"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="7xs-y1-zwd" secondAttribute="trailing" constant="225" id="VJ0-oX-Hdu"/>
-                <constraint firstAttribute="bottom" secondItem="7xs-y1-zwd" secondAttribute="bottom" constant="225" id="hgP-A7-ub1"/>
-                <constraint firstItem="7xs-y1-zwd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="225" id="hgU-Px-ymY"/>
-                <constraint firstItem="7xs-y1-zwd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="225" id="r1K-lJ-m2e"/>
+                <constraint firstItem="7xs-y1-zwd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DeY-m5-EMJ"/>
+                <constraint firstItem="7xs-y1-zwd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aab-5h-aal"/>
             </constraints>
             <connections>
                 <outlet property="backgroundView" destination="7xs-y1-zwd" id="GQ7-65-JvR"/>
-                <outlet property="imageLabel" destination="Wbe-DL-gpu" id="1cB-IP-Quz"/>
-                <outlet property="textLabel" destination="Flb-o4-hN0" id="1J3-EX-pw9"/>
+                <outlet property="imageLabel" destination="338-RN-M38" id="6K6-hW-Vae"/>
+                <outlet property="textLabel" destination="Flb-o4-hN0" id="gZR-Ae-PTO"/>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="loader" width="75" height="75"/>
+    </resources>
 </document>

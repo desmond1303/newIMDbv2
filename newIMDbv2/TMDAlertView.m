@@ -16,7 +16,7 @@ NSString *const AlertViewIdentifier = @"AlertView";
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithRed:70 green:166 blue:324 alpha:0.6];
+        //self.backgroundColor = [UIColor colorWithRed:70 green:166 blue:324 alpha:0.6];
     }
     return self;
 }
@@ -31,10 +31,10 @@ NSString *const AlertViewIdentifier = @"AlertView";
     _textLabel.minimumScaleFactor = 0.5;
     _textLabel.adjustsFontSizeToFitWidth = YES;
     alertType = type;
-    _imageLabel.text = @"Test Message";
+    //_imageLabel.text = @"Test Message";
     //_imageLabel.attributedText = [[NSMutableAttributedString alloc] initWithString:self.iconCodeForAlertType attributes:[[NSDictionary alloc] initWithObjectsAndKeys:[UIFont fontWithName:@"FontAwesome" size:35],@"font", nil]];
-    _backgroundView.alpha = 0.9;
-    _backgroundView.backgroundColor = self.colorForAlertType;
+    //_backgroundView.alpha = 0.9;
+    //_backgroundView.backgroundColor = self.colorForAlertType;
     if(shouldRotate){
         [self startRotation];
     } else {
