@@ -17,6 +17,7 @@ import Alamofire
             .request(.GET, url, parameters: urlParamteres)
             .responseArray("results") { (response:[TMDMovieReview]?, error: ErrorType?) in
                 if let allReviews = response {
+                    
                     sender.reviews = allReviews
                     completed()
                     sender.DetailsTableViewOutlet.reloadData()
